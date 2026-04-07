@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:sandbox_runtime",
+    "claim": "While `just-bash` supports Python via CPython compiled to WASM (which can technically run in Cloudflare Workers), this introduces a massive 'Compile/Boot Tax'. Cloudflare Workers run JS natively in V8 isolates with near-zero cold starts. Loading a CPython WASM binary (typically 5MB-20MB depending on the standard library) pushes against CF Worker size limits and adds significant WASM instantiation latency. For transient, single-use agent scripts, native JS/TS in V8 is architecturally superior to paying the overhead of booting a nested Python VM inside a JS isolate."
+  }
+}
