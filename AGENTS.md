@@ -16,23 +16,27 @@ Do not invent new folders. The storage layer is strictly divided:
 *   **Do Not Pull Massive Raw Files:** If a file in `/raw/` is large or complex, do not `GET` the entire file into your context window. Use Compute Tools (`QueryNode`, `ExtractSchema`) to push your questions down to the file and retrieve only the answers.
 *   **Embrace Taxonomy Fluidity:** Do not force information into a node if it doesn't fit perfectly. It is better to create a new, fragmented node and rely on `SEARCH` to cluster them later than to create a brittle taxonomy tree today.
 
-## 3. Markdown Formatting Standards (Materialized Views)
-When writing or updating a node in `/nodes/`, you must include strict YAML frontmatter. This acts as the relational database index for the local filesystem adapter.
+## 3. JSON Formatting Standards (Materialized Views)
+**CRITICAL:** Do NOT write Markdown files to the `/nodes/` directory. Per Decision 5 (Storage vs. Projection), Markdown is a terrible format for programmatic mutation. All materialized views must be strict `.json` files.
 
-```yaml
----
-id: "node:unique_concept_name"
-confidence: [0.0 - 1.0]
-last_updated: "YYYY-MM-DDTHH:MM:SSZ"
-edges:
-  - type: "supported_by"
-    target: "raw:karpathy_gist"
-  - type: "contradicts"
-    target: "node:old_concept"
----
+When writing or updating a node in `/nodes/`, you must use the following JSON schema:
+
+```json
+{
+  "id": "node:unique_concept_name",
+  "type": "concept | claim | schema | protocol",
+  "title": "Human Readable Title",
+  "description": "The concise, synthesized summary of the current belief state.",
+  "status": "active | planned | deprecated",
+  "tags": ["optional", "tags"],
+  "edges": [
+    { "target": "evt:hist:123", "relation": "supported_by" },
+    { "target": "node:old_concept", "relation": "contradicts" }
+  ]
+}
 ```
-*   **Body Content:** The body of the markdown file should be a concise, synthesized summary of the current belief state.
-*   **Inline Links:** Use `[node:id]` syntax in the text to denote explicit traversal paths.
+*   **Edges:** Explicit structural relationships are defined as objects in the `edges` array, not as inline text strings. This is what allows `TRAVERSE` to function.
+*   **The Content:** The core truth goes into the `description` string.
 
 ## 4. The Ingest Workflow
 When a human provides a new source:
