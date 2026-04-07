@@ -1,4 +1,4 @@
-# Our Toolchains, Patterns, and Learnings
+# Brian's Crazy Ideas and Hallucinations
 
 If you are reading through the history or design decisions of this repository (like `NARRATIVE.md` or `DESIGN_DECISIONS.md`), you will see references to terms like **TA**, the **`/know` skill**, **Dolt**, and **`/council`**.
 

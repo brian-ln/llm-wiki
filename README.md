@@ -8,7 +8,7 @@ While his pattern used Markdown files and Obsidian to make it human-readable, we
 
 ### The Pivot: An Epistemic Engine for Human & Algorithmic Partners
 
-This repository distills years of our exploration into AI memory systems into an approachable, universal starting point. *(If you are curious about the specific internal tools and patterns that led us here—like the `/know` CLI, Dolt databases, and our `/council` multi-agent workflows—read [Our Toolchain & Learnings](./TOOLCHAIN_AND_LEARNINGS.md)).*
+This repository distills years of our exploration into AI memory systems into an approachable, universal starting point. *(If you are curious about the specific internal tools and patterns that led us here—like the `/know` CLI, Dolt databases, and our `/council` multi-agent workflows—read [Brian's Crazy Ideas & Hallucinations](./BRIANS_CRAZY_IDEAS_AND_HALLUCINATIONS.md)).*
 
 We stripped away the human-centric constraints of the filesystem and pivoted to a **pure Event Sourced architecture**. The LLM does not act as a naive file clerk overwriting Markdown pages; it acts as a reasoning engine appending factual claims to an immutable ledger.
 
