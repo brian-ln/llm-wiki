@@ -57,6 +57,11 @@
       "target": "topic:formalize_reusable_capabilities",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:universal_sandboxed_actuator",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }

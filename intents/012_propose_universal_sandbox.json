@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:universal_actuator",
+    "claim": "Applying 'Code Mode MCP' and 'just-bash' to the ENTIRE system means replacing rigid Software 1.0 actuators (like `bin/engine.py`'s hardcoded switch statements) with a Universal Sandboxed Actuator. Instead of exposing discrete tools for every graph operation, we expose a virtual, isolated execution environment (via just-bash or a JS sandbox) where the agent dynamically scripts its traversals, validations, and ledger appends. The graph and ledger are mounted into this sandbox with explicit permissions."
+  }
+}
