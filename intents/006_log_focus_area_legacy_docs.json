@@ -1,0 +1,11 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "UPDATE_NODE",
+  "payload": {
+    "target": "sys:focus_areas",
+    "changes": [
+      "added topic:reconcile_legacy_markdown to formalize the debt and required updates for out-of-sync files like README.md, OPERATIONS.md, and GOKR.md"
+    ]
+  }
+}

@@ -42,6 +42,11 @@
       "target": "topic:auto_project_constitution",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:reconcile_legacy_markdown",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }
