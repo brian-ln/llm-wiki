@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: park_ui.py",
+  "original_script": "park_ui.py",
+  "inferred_intent": {
+    "operation": "UPSERT_NODE / APPEND_EVENT",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import json\nfrom pathlib import Path\n\nNODES_DIR = Path(\"nodes\")\nfocus_file = NODES_DIR / \"sys_focus_areas.json\"\n\nif focus_file.exists():\n    with open(focus_file, \"r\") as f:\n        data = json.load(f)\n\n    # Add the UI/IDE to the deferred/planned list if we have a way to represent it,\n    # or just append to description.\n    data[\"description\"] += (\n        \"\\n[DEFERRED]: UI/UX implementation and visual schema design for Agentic Streams and Skill Governance (The 'Agentic Stream IDE'). Parked for later.\"\n    )\n\n    with open(focus_file, \"w\") as f:\n        json.dump(data, f, indent=2)\n    print(\"Updated sys_focus_areas.json to park UI design.\")\nelse:\n    print(\"sys_focus_areas.json not found.\")\n"
+}

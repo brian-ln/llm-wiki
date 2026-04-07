@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: add_new_focus_areas.py",
+  "original_script": "add_new_focus_areas.py",
+  "inferred_intent": {
+    "operation": "UPSERT_NODE / APPEND_EVENT",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import json\nimport os\n\nwith open('nodes/sys_focus_areas.json', 'r') as f:\n    data = json.load(f)\n\ndata['edges'].extend([\n    {\"target\": \"topic:organizational_constitution_agents_md\", \"relation\": \"tracks\", \"status\": \"planned\"},\n    {\"target\": \"topic:explore_a2ui\", \"relation\": \"tracks\", \"status\": \"planned\"}\n])\n\nwith open('nodes/sys_focus_areas.json', 'w') as f:\n    json.dump(data, f, indent=2)\n\nwith open('events/system_events.jsonl', 'a') as f:\n    f.write('{\"id\": \"evt:sys:add_focus_areas\", \"type\": \"UPDATE_NODE\", \"target\": \"sys:focus_areas\", \"changes\": [\"added topic:organizational_constitution_agents_md\", \"added topic:explore_a2ui\"]}\\n')\n\nprint(\"Updated sys_focus_areas.json\")\n"
+}

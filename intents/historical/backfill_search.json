@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: search.py",
+  "original_script": "search.py",
+  "inferred_intent": {
+    "operation": "UNKNOWN",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import urllib.request\nimport urllib.parse\nimport re\nimport html\n\ndef search_ddg(query):\n    url = \"https://html.duckduckgo.com/html/?q=\" + urllib.parse.quote(query)\n    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\n    try:\n        html_content = urllib.request.urlopen(req).read().decode('utf-8')\n        links = re.findall(r'<a class=\"result__url\" href=\"([^\"]+)\">([^<]+)</a>', html_content)\n        for href, text in links[:5]:\n            print(f\"{html.unescape(text).strip()} - {urllib.parse.unquote(href)}\")\n    except Exception as e:\n        print(\"Error:\", e)\n\nprint(\"--- Mamba SSM ---\")\nsearch_ddg(\"Mamba State Space Model architecture arxiv\")\nprint(\"\\n--- Neural ISAs ---\")\nsearch_ddg(\"\\\"Software 2.0\\\" OR \\\"differentiable programming\\\" neural architecture \\\"instruction set\\\"\")\n"
+}

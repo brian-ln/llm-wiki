@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: add_ir_focus_area.py",
+  "original_script": "add_ir_focus_area.py",
+  "inferred_intent": {
+    "operation": "UPSERT_NODE / APPEND_EVENT",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import json\nimport os\nimport datetime\n\n# 1. Update the Focus Areas node\nwith open('nodes/sys_focus_areas.json', 'r') as f:\n    data = json.load(f)\n\ndata['edges'].append({\n    \"target\": \"topic:agentic_ir_vs_transient_code\",\n    \"relation\": \"tracks\",\n    \"status\": \"planned\"\n})\n\nwith open('nodes/sys_focus_areas.json', 'w') as f:\n    json.dump(data, f, indent=2)\n\n# 2. Append Epistemic Audit and Update events\naudit_event = {\n    \"id\": \"evt:sys:audit_ir_concept\",\n    \"type\": \"EPISTEMIC_AUDIT\",\n    \"target_id\": \"topic:agentic_ir_vs_transient_code\",\n    \"audit_type\": \"VALIDATION\",\n    \"rationalization\": \"Python actuation scripts are Software 1.0 bytecode, not Software 2.0 source code. The true source is the Intent + Constraint Schema.\",\n    \"null_hypothesis\": \"If an LLM cannot reliably regenerate the 1.0 Python bytecode from the declarative IR (Intent + Schema), then the IR is an insufficient abstraction and we must version-control the deterministic scripts.\"\n}\n\nupdate_event = {\n    \"id\": \"evt:sys:add_ir_focus\",\n    \"type\": \"UPDATE_NODE\",\n    \"target\": \"sys:focus_areas\",\n    \"changes\": [\"added topic:agentic_ir_vs_transient_code\"]\n}\n\nwith open('events/system_events.jsonl', 'a') as f:\n    f.write(json.dumps(audit_event) + '\\n')\n    f.write(json.dumps(update_event) + '\\n')\n\nprint(\"[MEASURED] sys_focus_areas.json updated with IR topic and events logged.\")\n"
+}

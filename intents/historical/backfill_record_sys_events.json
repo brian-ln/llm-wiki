@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: record_sys_events.py",
+  "original_script": "record_sys_events.py",
+  "inferred_intent": {
+    "operation": "UNKNOWN",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import json\nimport uuid\nimport datetime\nfrom pathlib import Path\n\n# Setup paths\nEVENTS_DIR = Path(\"events\")\nEVENTS_DIR.mkdir(exist_ok=True)\n\n\ndef create_event(evt_type, title, details):\n    evt_id = f\"evt:sys:{uuid.uuid4().hex[:8]}\"\n    evt = {\n        \"id\": evt_id,\n        \"timestamp\": datetime.datetime.now(datetime.timezone.utc).isoformat(),\n        \"type\": evt_type,\n        \"title\": title,\n        \"details\": details,\n    }\n    with open(EVENTS_DIR / \"system_events.jsonl\", \"a\") as f:\n        f.write(json.dumps(evt) + \"\\n\")\n    return evt_id\n\n\n# 1. Log discovery event\ncreate_event(\n    \"SYSTEM_DISCOVERY\",\n    \"Locate Opencode Logs\",\n    \"Found active session SQLite database and append-only JSONL logs in ~/.local/share/opencode/ and ~/.local/state/opencode/. Confirmed local execution trace is durable.\",\n)\n\nprint(\"System events recorded successfully.\")\n"
+}

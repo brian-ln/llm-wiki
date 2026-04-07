@@ -1,0 +1,11 @@
+{
+  "operation": "LOG_HISTORICAL_INTENT",
+  "description": "Backported legacy Software 1.0 actuator script: fix_protocol_events.py",
+  "original_script": "fix_protocol_events.py",
+  "inferred_intent": {
+    "operation": "MIGRATE_SCHEMA",
+    "target": "Inferred from script execution",
+    "context": "Legacy execution trace prior to bin/engine.py"
+  },
+  "legacy_executable": "import json\nimport datetime\nimport uuid\n\ndef make_protocol_update_event(title, description):\n    return {\n        \"id\": f\"evt:sys:{uuid.uuid4().hex[:8]}\",\n        \"timestamp\": datetime.datetime.now().isoformat() + \"Z\",\n        \"actor\": \"human_algo_council\",\n        \"action\": \"UPDATE_NODE\",\n        \"payload\": {\n            \"node_id\": \"sys:cap:protocol_updates\",\n            \"change\": title,\n            \"patch\": {\n                \"description\": description\n            }\n        }\n    }\n\nevents = [\n    make_protocol_update_event(\"Added Resilient Fetching Protocol\", \"Added a rule to OPERATIONS.md to explicitly use fallback methods like curl + jina.ai or custom python scripts with User-Agent headers when the standard webfetch tool is blocked.\"),\n    make_protocol_update_event(\"Enforced Strict Raw Immutability\", \"Added a rule prohibiting YAML frontmatter in /raw/ files to maintain byte-for-byte integrity. Provenance is now strictly managed via INGEST_RAW events and the sys_raw_index node.\"),\n    make_protocol_update_event(\"Mandated Epistemic Rigor Tagging\", \"Added a rule to explicitly tag analogical syntheses as [HYPOTHESIS] and [AGENT-RESEARCH] and perform an EPISTEMIC_AUDIT when mapping formal concepts to industry metaphors (e.g., Software 2.0).\")\n]\n\nwith open(\"events/protocol_updates.jsonl\", \"a\") as f:\n    for evt in events:\n        f.write(json.dumps(evt) + \"\\n\")\n\nprint(\"Protocol updates logged to ledger.\")\n"
+}
