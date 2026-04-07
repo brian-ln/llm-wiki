@@ -58,3 +58,46 @@ The system then "materialized" those events into discrete JSON nodes (`nodes/sys
 > **Commit:** `bc09db0` (feat: bootstrap system backlog as native event log and materialized JSON nodes)
 > **Directory:** [`events/`](file:///Users/bln/play/projects/proj-20260407-092747/events/)
 > **Directory:** [`nodes/`](file:///Users/bln/play/projects/proj-20260407-092747/nodes/)
+
+## Session 2: The Agent OS and the Death of Ad-Hoc Scripts
+**Date:** 2026-04-07
+
+### 1. Formalizing Software 2.0 (The Epistemic Ontology)
+We started by defining the actual theoretical framework underlying the engine. We moved past the mechanical "file clerk" and embraced Andrej Karpathy's "Software 2.0" metaphor. We recognized that treating LLMs as chaotic black boxes that need rigid `try/catch` loops (pure determinism) is a false dialectic. Instead, we architected **Constraint Surfaces** (JSON schemas, append-only ledgers) that force the high-dimensional fluid (the LLM) to converge on reliable outputs.
+
+To prove this, the AI ingested source texts (Karpathy, Wikipedia) and materialized dozens of nodes defining *Provisional Heuristics*, *Independent Agent Convergence (IAC)*, and *GOKR* (Goals, Objectives, Key Results).
+> **Commit:** `41da65b` (feat(epistemic): formalize Software 2.0 ontology, constraints, and GOKR heuristics)
+
+### 2. The Actuator Anomaly: 35 Python Scripts
+To materialize these new nodes and events, the AI (acting under strict instructions not to manually edit JSON files via text tools) wrote and executed over 35 distinct Python scripts (`synthesize_determinism.py`, `ingest_karpathy.py`, `fix_epistemic_rigor.py`). 
+
+The root directory became littered with these single-use `1.0` actuator scripts. While they perfectly executed the task, they raised a profound architectural question: *If the Python script is just 1.0 bytecode, what is the actual 2.0 source code?*
+
+### 3. The Revelation: Declarative Agentic IR
+We realized that version-controlling these 35 Python scripts was a **Software 1.0 anti-pattern**. If the underlying JSON schema changed tomorrow, all 35 scripts would break. 
+
+The true source code is the **Intermediate Representation (IR)**:
+1.  **The Intent** (What the AI wants to do)
+2.  **The Constraint Surface** (The rules of the environment)
+3.  **The Event Ledger** (The execution trace)
+
+The Python script was merely a disposable JIT-compiled actuator bridging the high-dimensional thought to the low-dimensional filesystem.
+> **Commit:** `60f2929` (feat(epistemic): capture Agentic IR and Operations Taxonomy into memory graph)
+
+### 4. Building the Agentic Engine (`bin/engine.py`)
+To formalize this, we stripped the AI of its ability to write ad-hoc Python scripts. We built `bin/engine.py`—a single, deterministic Software 1.0 engine. 
+
+From now on, the AI acts as an OS Kernel. To mutate the graph, it writes a declarative `.json` Intent (the Agentic IR) to the `/intents/` directory and executes `python3 bin/engine.py <intent.json>`. The engine automatically envelopes the intent, generates UUIDs/timestamps, permanently logs the cognitive intent to `events/intent_ledger.jsonl`, and then mutates the filesystem.
+> **Commit:** `0be6277` (feat(system): build Agentic IR execution engine and bootstrap ledger)
+> **Commit:** `4bdaf0b` (docs(system): formalize Agentic IR protocol in AGENTS.md and EVENT_SCHEMA.md)
+
+### 5. Time Travel & The Great Backfill
+We now had a pristine 2.0 pipeline, but a dirty 1.0 history (the 35 Python scripts). We couldn't just delete them, because we would lose the cognitive lineage of *how* the early graph was built.
+
+We upgraded the engine to support `LOG_HISTORICAL_INTENT`. We wrote a final script that parsed all 35 legacy Python files, extracted their implied intent, embedded the raw Python source code as the `legacy_executable`, and appended them all to the `intent_ledger.jsonl`. 
+
+Finally, we cross-referenced `git log` to extract the exact millisecond each script was originally authored, backdating the ledger timestamps to ensure perfect temporal causality. Once the history was safely sealed in the ledger, we executed `git rm *.py`, permanently purging the 1.0 actuators from the repository.
+
+Our Epistemic Engine is now a fully declarative Agent OS.
+> **Commit:** `a12a2ba` (chore(sys): backport legacy python scripts into historical intents and clean root directory)
+> **Commit:** `bb17048` (fix(system): align historical intent timestamps with their causal execution)
