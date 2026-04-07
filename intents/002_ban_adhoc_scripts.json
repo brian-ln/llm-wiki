@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "protocol_updates.jsonl",
+  "event_type": "PROTOCOL_CHANGE",
+  "payload": {
+    "title": "Deprecation of Ad-Hoc Actuator Scripts",
+    "details": "Formally banned the use of ephemeral Python scripts for graph mutation. All state changes must now be declared as JSON intents in `/intents/` and executed via `bin/engine.py`. This ensures perfect lineage in `intent_ledger.jsonl` and decouples the AI's cognitive work (IR) from deterministic file I/O operations."
+  }
+}

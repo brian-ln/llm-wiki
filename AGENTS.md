@@ -5,6 +5,8 @@ This repository is a local filesystem adapter for TA's Epistemic Engine. You are
 When interacting with this repository, adhere strictly to the following protocols.
 
 ## 1. Directory Structure (The Storage Layer)
+*   `/intents/` - **Agentic Declarations.** Transient JSON payloads defining state transition intents. These are the "system calls" of the Agent OS, executed by `bin/engine.py` and logged for posterity.
+
 Do not invent new folders. The storage layer is strictly divided:
 
 *   `/raw/` - **Immutable Sources.** Original PDFs, web scrapes, and transcripts. Once written, these are never modified by the agent.
@@ -12,6 +14,8 @@ Do not invent new folders. The storage layer is strictly divided:
 *   `/nodes/` - **Materialized Views.** Markdown representations of the current belief state for a given concept. These are projections generated from the claims ledger.
 
 ## 2. Core Operating Directives
+*   **The Declarative Intent Engine:** DO NOT write ad-hoc Python scripts to mutate the graph. Treat this system as a Declarative Agent OS. Create a JSON payload in `/intents/` defining your `operation` (e.g., `UPSERT_NODE`, `APPEND_EVENT`) and execute it via `python3 bin/engine.py <intent.json>`. The engine handles the deterministic Software 1.0 file I/O and permanently logs your declarative intent to `events/intent_ledger.jsonl` for historical lineage.
+
 *   **Never Destructively PUT Without Logging:** Before you overwrite a materialized view in `/nodes/`, you must write an immutable record to the ledger explaining *why* the belief changed and citing the source.
 *   **Do Not Pull Massive Raw Files:** If a file in `/raw/` is large or complex, do not `GET` the entire file into your context window. Use Compute Tools (`QueryNode`, `ExtractSchema`) to push your questions down to the file and retrieve only the answers.
 *   **Embrace Taxonomy Fluidity:** Do not force information into a node if it doesn't fit perfectly. It is better to create a new, fragmented node and rely on `SEARCH` to cluster them later than to create a brittle taxonomy tree today.
