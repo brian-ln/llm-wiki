@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:reusable_capabilities",
+    "claim": "Reusable processes, templates, checklists, and tools must not be stored as static markdown files or transient Python scripts. They must be modeled as discrete, queryable 'Capability' or 'Protocol' nodes in the JSON graph. An Agent discovers a required process by traversing an edge (e.g., 'governed_by' or 'implemented_via') and executes it by submitting a declarative Intent to the Event Ledger."
+  }
+}

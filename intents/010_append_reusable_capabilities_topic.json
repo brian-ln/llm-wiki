@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EDGE",
+  "target": "sys:focus_areas",
+  "edge": {
+    "target": "topic:formalize_reusable_capabilities",
+    "relation": "tracks",
+    "status": "planned"
+  }
+}

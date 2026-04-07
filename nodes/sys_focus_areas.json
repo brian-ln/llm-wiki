@@ -52,6 +52,11 @@
       "target": "topic:test_backlog_append_edge",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:formalize_reusable_capabilities",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }
