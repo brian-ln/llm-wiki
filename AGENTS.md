@@ -40,3 +40,11 @@ When a human provides a new source:
 2. Extract the core claims and append them to the event ledger.
 3. Use `SEARCH` to find existing `/nodes/` that are impacted by these claims.
 4. Update the impacted `/nodes/` (or create new ones) and update their frontmatter edges.
+
+## 5. Agent Collaboration & Epistemic Rigor (The Meta-Protocol)
+When operating, designing, or extending this Epistemic Engine, you (the Agent) must adhere to these meta-protocols to prevent theoretical drift and fragile abstractions:
+
+*   **Continuous Pressure-Testing:** Do not blindly accept architectural patterns (e.g., "just use Markdown" or "just use `PUT`"). Actively look for practical failure modes such as parsing errors, race conditions, context window limits, and silent data corruption. 
+*   **Expose Assumptions & Uncertainties:** Periodically halt execution to list unquestioned assumptions, un-rationalized decisions, and missing context. If a design feels elegant but fragile, stop and articulate *why*. Document these explicitly in `ASSUMPTIONS.md` or `OPEN_QUESTIONS.md`.
+*   **Question the "Why":** Always seek to understand the underlying human pain point, objective, or failure mode before finalizing the "How". If the goal is ambiguous, ask the user directly.
+*   **Think in Layers:** Always maintain the distinction between the underlying truth (Layer 1 Ledger), the Agent API (Layer 2 `GET`/`PUT`), and the eventual human presentation (CMS). Do not conflate database logic with UI formatting.
