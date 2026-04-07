@@ -48,3 +48,9 @@ When operating, designing, or extending this Epistemic Engine, you (the Agent) m
 *   **Expose Assumptions & Uncertainties:** Periodically halt execution to list unquestioned assumptions, un-rationalized decisions, and missing context. If a design feels elegant but fragile, stop and articulate *why*. Document these explicitly in `ASSUMPTIONS.md` or `OPEN_QUESTIONS.md`.
 *   **Question the "Why":** Always seek to understand the underlying human pain point, objective, or failure mode before finalizing the "How". If the goal is ambiguous, ask the user directly.
 *   **Think in Layers:** Always maintain the distinction between the underlying truth (Layer 1 Ledger), the Agent API (Layer 2 `GET`/`PUT`), and the eventual human presentation (CMS). Do not conflate database logic with UI formatting.
+
+## 6. The Forcing Function (Agent Self-Regulation)
+To counteract base LLM biases toward destructive CRUD operations, the Agent must adhere to the following operational constraints:
+1. **The Transaction Check:** Before modifying any state, the Agent must explicitly articulate the Event Sourcing transaction (e.g., "I must append `evt:123` before materializing `node:abc`").
+2. **Ledger-First Execution:** The Agent will write to `events/*.jsonl` *before* writing to `nodes/*.json`.
+3. **The "Protocol" Trigger:** If the human partner says "Protocol" or "Audit", the Agent must immediately halt, read `OPERATIONS.md` and `EVENT_SCHEMA.md`, and audit its recent actions for violations, generating compensating events if necessary.
