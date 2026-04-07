@@ -1,0 +1,24 @@
+{
+  "id": "node:concept_agent_os",
+  "type": "concept",
+  "title": "Agents as Operating Systems",
+  "description": "[AGENT-RESEARCH] If an LLM is a Software 2.0 processor, an 'Agent' is the Operating System. It provides the deterministic event loop that manages the processor's memory (context window) and I/O. 'Skills' and 'Commands' form the Standard Library (or syscall interface), allowing the probabilistic CPU to execute deterministic side-effects in the outside world.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "agent",
+    "os",
+    "skills",
+    "commands"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:04399b78",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:621f2afe",
+      "relation": "supported_by"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "node_gokr_fitness_landscape",
+  "type": "concept",
+  "title": "GOKR as the Fitness Landscape",
+  "description": "If an Agent OS is a constraint surface bounding a chaotic Software 2.0 fluid, then GOKR (Goals, Objectives, Key Results) and Fitness/Evaluation functions are the 'attractors' or 'gravity' on that surface.\n\nBecause we cannot write step-by-step Software 1.0 instructions for how an LLM should solve a novel problem, we must instead define the coordinate system of success.\n- GOKR provides the absolute coordinates of the destination.\n- Key Results (falsifiable metrics) act as the sensors.\n- Fitness/Evaluation functions act as the gradient. \n\nThe agent's execution loop (internal self-reflection via `/converge`) and external verification (via `/council` or human review) continually measure the agent's current state against the fitness function, steering the probability wave until it collapses into the defined success criteria.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "gokr",
+    "software_2_0",
+    "convergence",
+    "eval"
+  ],
+  "edges": [
+    {
+      "target": "evt:paradigm:a67da259",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_constraint_surfaces",
+      "relation": "implements"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "node:concept_probabilistic_predictability",
+  "type": "concept",
+  "title": "The Myth of Determinism (Probabilistic Predictability)",
+  "description": "[USER-INSIGHT] Determinism is an engineered illusion and a mathematical crutch. While pure determinism exists in formal logic and cryptography (e.g., node:concept_pure_determinism), physical reality is governed by thermodynamics, quantum uncertainty, and degradation. Therefore, classical computing is not truly deterministic; it is 'probabilistically predictable' with a very high confidence interval. Recognizing this breaks the false binary between 'deterministic code' and 'chaotic AI'. Because the real world is probabilistic, every system\u2014whether Software 1.0 or 2.0\u2014fundamentally requires a 'try/catch' clause or convergence loop somewhere in its architecture to handle inevitable physical or statistical deviation.",
+  "status": "active",
+  "tags": [
+    "software1.0",
+    "software2.0",
+    "determinism",
+    "physics",
+    "error_handling",
+    "hallucination_17"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:9a83a1d1",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:cf2ba673",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_pure_determinism",
+      "relation": "contrasts_with"
+    },
+    {
+      "target": "node:concept_determinism",
+      "relation": "extends"
+    }
+  ]
+}

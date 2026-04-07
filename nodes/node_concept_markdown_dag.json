@@ -1,0 +1,37 @@
+{
+  "id": "node:concept_markdown_dag",
+  "type": "concept",
+  "title": "Markdown as a Semantic DAG (Graph Database)",
+  "description": "[AGENT-RESEARCH] Markdown is traditionally viewed as a flat markup language. However, mathematically, it is a serialization format for a Document Object Model (DOM) or Directed Acyclic Graph (DAG). Headers define tree hierarchy, lists define child nodes, and hyperlinks define cross-cutting edges. By treating it as a graph database, the Agent OS can parse the text into a traversable AST, allowing programatic querying of semantic sub-trees. This eliminates the need for 'dumb' token chunking in RAG pipelines; the Agent can surgically extract exactly the right logical branch of knowledge to feed into the Software 2.0 Processor's context window. Ultimately, Markdown is just one representation (Pillar 15) of this underlying cognitive topology.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "markdown",
+    "dag",
+    "dom",
+    "graph_database",
+    "semantic_indexing"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:fa1bb8a1",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:36e646d6",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:6d551a30",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:8a902b03",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:ontology_representation",
+      "relation": "instance_of"
+    }
+  ]
+}

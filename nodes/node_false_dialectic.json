@@ -1,0 +1,27 @@
+{
+  "id": "node_false_dialectic",
+  "type": "concept",
+  "title": "The False Dialectic of Determinism",
+  "description": "The dialectic of 'Deterministic (Software 1.0) vs. Non-Deterministic (Software 2.0)' is a flawed mental model.\n\n1. Software 1.0 is rarely deterministic in the wild. Network latency, thread scheduling, race conditions, and distributed state (CAP theorem) make traditional code highly chaotic. We just spend massive engineering effort (locks, retries, queues) to create the *illusion* of determinism.\n2. Software 2.0 (LLMs) is fundamentally deterministic math (matrix multiplication). The same weights + same context + temperature 0 = exact same output. The perception of 'non-determinism' comes from the system's massive dimensionality and extreme sensitivity to initial conditions (prompt variations), not from actual randomness.\n\nThe correct way to view the architecture is through the lens of **High-Dimensionality vs. Low-Dimensionality Constraints**, or **Convergence vs. Divergence**. We use rigid, low-dimensional structures (schemas, event ledgers, type systems) to constrain high-dimensional pattern matchers (LLMs) so that the overall system *converges* on a reliable state, regardless of micro-variance.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "software_2_0",
+    "complex_systems",
+    "convergence"
+  ],
+  "edges": [
+    {
+      "target": "evt:epistemic:2935bae4",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_pure_determinism",
+      "relation": "contradicts"
+    },
+    {
+      "target": "node_probabilistic_predictability",
+      "relation": "expands"
+    }
+  ]
+}

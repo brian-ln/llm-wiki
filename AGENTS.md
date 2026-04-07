@@ -8,7 +8,7 @@ When interacting with this repository, adhere strictly to the following protocol
 Do not invent new folders. The storage layer is strictly divided:
 
 *   `/raw/` - **Immutable Sources.** Original PDFs, web scrapes, and transcripts. Once written, these are never modified by the agent.
-*   `/claims/` (or `/events/`) - **The Event Ledger.** Append-only logs of what the engine has learned, contradicted, or resolved. This is the true source of truth.
+*   `/events/` - **The Event Ledger.** Append-only logs of what the engine has learned, contradicted, or resolved. This is the true source of truth.
 *   `/nodes/` - **Materialized Views.** Markdown representations of the current belief state for a given concept. These are projections generated from the claims ledger.
 
 ## 2. Core Operating Directives

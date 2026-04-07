@@ -1,0 +1,18 @@
+{
+  "id": "node:ax_agent_experience",
+  "type": "concept",
+  "title": "Agent Experience (AX)",
+  "description": "The design discipline of creating affordances, protocols, and interfaces specifically optimized for autonomous LLM agents. Good AX for streams includes clear schema boundaries, explicit error states, and deterministic navigation tools.",
+  "status": "active",
+  "tags": [
+    "ax",
+    "ux",
+    "design_patterns"
+  ],
+  "edges": [
+    {
+      "target": "evt:stream:96577f39",
+      "relation": "defined_by"
+    }
+  ]
+}

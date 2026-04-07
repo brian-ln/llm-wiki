@@ -1,0 +1,23 @@
+{
+  "id": "node_fractal_systems_isomorphism",
+  "type": "concept",
+  "title": "Fractal Systems Isomorphism (Agents to Orgs)",
+  "description": "The principles used to manage high-dimensional AI models (Software 2.0) are fractally isomorphic to the principles of managing human teams and complex organizations.\n\nThe Doomed Pursuit (Micromanagement): 'How do we make a human/team/org act like a deterministic bash script?' This is the failure mode of rigid bureaucracy, Waterfall planning, and micromanagement. It attempts to force a complex, probabilistic entity into a rigid, low-dimensional execution path, crushing adaptability and resilience.\n\nThe Convergent Approach (Leadership & Culture): 'How do we define the fitness landscape so the human/team/org naturally collapses its probability wave into the right answer?' This is the essence of effective leadership, autonomous squads, and incentive design. You do not dictate the step-by-step physics of execution; you define the GOKR (the attractor), establish the cultural boundaries (the constraint surfaces), and allow the high-dimensional entity to creatively navigate the terrain toward the goal.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "systems_theory",
+    "organizational_design",
+    "isomorphism"
+  ],
+  "edges": [
+    {
+      "target": "evt:paradigm:928c45b4",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_constraint_surfaces",
+      "relation": "generalizes"
+    }
+  ]
+}

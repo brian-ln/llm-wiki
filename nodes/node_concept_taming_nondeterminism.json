@@ -1,0 +1,29 @@
+{
+  "id": "node:concept_taming_nondeterminism",
+  "type": "concept",
+  "title": "Taming Non-Determinism (SW 1.0 vs SW 2.0)",
+  "description": "[AGENT-RESEARCH] In the non-deterministic physical world, Software 1.0 relies on architectural guardrails: Idempotency, State Machines, Type-Checking/Schemas, and Retry Loops (try/catch). To make Software 2.0 'Markdown programs' more predictable, these exact same patterns must be ported to the Agent OS level. The OS must enforce Schema Validation (Type-Checking) on the LLM's output. If the LLM hallucinates or outputs malformed data, the OS catches the error and automatically injects the stack trace back into the context window (the SW 2.0 equivalent of a Retry Loop). By wrapping the probabilistic LLM in a rigid, deterministic Software 1.0 scaffolding, we tame the entropy of the neural processor.",
+  "status": "active",
+  "tags": [
+    "determinism",
+    "error_handling",
+    "software1.0",
+    "software2.0",
+    "architecture",
+    "reliability"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:558489f0",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:952b7378",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_probabilistic_predictability",
+      "relation": "implements"
+    }
+  ]
+}

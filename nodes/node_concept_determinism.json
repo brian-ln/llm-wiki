@@ -1,0 +1,33 @@
+{
+  "id": "node:concept_determinism",
+  "type": "concept",
+  "title": "The Illusion of Determinism in Computing",
+  "description": "[AGENT-RESEARCH] Determinism strictly means that a specific input to a specific state always yields the exact same output. In Software 1.0, determinism is a heavily engineered illusion\u2014logic gates are designed to squash analog noise into discrete 1s and 0s. Yet, true determinism constantly leaks via race conditions, hardware faults (cosmic rays), and asynchronous network latency. In Software 2.0, the core mathematical operations (matrix multiplications) are technically deterministic, but execution on massively parallel GPUs introduces floating-point non-associativity (hardware non-determinism). Furthermore, the paradigm intentionally injects entropy (Temperature > 0) to avoid degenerate, repetitive outputs, shifting the system from deterministic to probabilistic.",
+  "status": "active",
+  "tags": [
+    "software1.0",
+    "software2.0",
+    "determinism",
+    "physics",
+    "hardware",
+    "probability"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:e127c06a",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:5905696d",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:d4b73bec",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:d771707f",
+      "relation": "supported_by"
+    }
+  ]
+}

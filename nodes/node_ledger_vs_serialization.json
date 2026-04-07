@@ -1,0 +1,23 @@
+{
+  "id": "node_ledger_vs_serialization",
+  "type": "concept",
+  "title": "Ledger vs. Serialization Format",
+  "description": "A common architectural fallacy is conflating the conceptual 'Ledger' with its physical storage format (e.g., a `.jsonl` file or a SQLite `.db`).\n\nThe true 'Ledger' is the mathematical, append-only set of state transitions (the causal graph of events). \n\nA `.jsonl` file is just a low-fidelity, 1D serialization format used to persist that mathematical set to a physical hard drive. It is a projection. If you switch from `.jsonl` to SQLite, or to a distributed Kafka stream, the Ledger itself has not changed\u2014only its storage medium.\n\nConflating the two leads to false constraints, such as assuming the Ledger must be strictly ordered just because a text file is strictly ordered line-by-line.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "architecture",
+    "event_sourcing",
+    "data_structures"
+  ],
+  "edges": [
+    {
+      "target": "evt:paradigm:ccb14d6b",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_deterministic_ledger",
+      "relation": "refines"
+    }
+  ]
+}

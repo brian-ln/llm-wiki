@@ -1,0 +1,14 @@
+{
+  "id": "node:llm_architecture",
+  "type": "concept",
+  "title": "LLM Architecture: Neural Net + Scaffolding",
+  "description": "An LLM (Large Language Model) is fundamentally a specific type of deep neural network, almost universally based on the Transformer architecture. However, it requires non-neural-net components ('the plus some stuff') to function as a text generator. The core neural net calculates probabilities over a vocabulary, but it is surrounded by a Tokenizer (which translates raw text strings into numerical IDs and back) and a Sampling/Inference Engine (which uses algorithms like temperature, top-k, and top-p to decide which word to actually pick from the neural net's output distribution).",
+  "status": "active",
+  "tags": ["llm", "neural_network", "transformer", "tokenizer", "architecture", "software2.0"],
+  "edges": [
+    { "target": "evt:raw:q14", "relation": "answers" },
+    { "target": "evt:logic:13", "relation": "supported_by" },
+    { "target": "evt:logic:14", "relation": "supported_by" },
+    { "target": "node:concept_neural_net_processor", "relation": "supports" }
+  ]
+}

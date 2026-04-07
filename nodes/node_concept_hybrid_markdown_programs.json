@@ -1,0 +1,33 @@
+{
+  "id": "node:concept_hybrid_markdown_programs",
+  "type": "concept",
+  "title": "Markdown Skills as Hybrid Programs",
+  "description": "[MEASURED] [AGENT-RESEARCH] Agents and skills defined in Markdown (e.g., Claude Code `SKILL.md` files) are structurally 'Hybrid Programs'. They are not exclusively Software 2.0 prompts. Because Markdown is a parsable DAG, the Agent OS reads the file and routes different sub-trees to different processors. The YAML frontmatter (defining routes, allowed tools, UI descriptions) is routed to a deterministic Software 1.0 parser. The natural language body is routed to the probabilistic Software 2.0 LLM. Furthermore, embedded artifacts (like code blocks) can be executed directly by the OS, bypassing the LLM entirely. Therefore, a Markdown skill is a unified source file compiling down to both deterministic machine code and probabilistic neural conditioning.",
+  "status": "active",
+  "tags": [
+    "software1.0",
+    "software2.0",
+    "markdown",
+    "hybrid",
+    "skills",
+    "agents"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:1d43e902",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:9228d164",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_markdown_dag",
+      "relation": "extends"
+    },
+    {
+      "target": "node:concept_agent_os",
+      "relation": "executed_by"
+    }
+  ]
+}

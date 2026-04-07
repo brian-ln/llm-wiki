@@ -1,0 +1,23 @@
+{
+  "id": "node_async_agentic_threads",
+  "type": "concept",
+  "title": "Asynchronous Agentic Threads",
+  "description": "In the Software 2.0 Agent OS metaphor, 'sidechains' are not just synchronous blocking function calls; they are fully asynchronous worker threads.\n\n1. Background Daemons (/bg): The user or main agent can spawn a background task (e.g., long-running research or refactoring). The main execution thread (the CLI REPL) immediately returns control to the user, allowing parallel work.\n2. Shared Memory & IPC (/ug): Because these threads run asynchronously, they cannot simply return a single string to a blocking caller. They must coordinate via a shared state layer. The Universal Graph System (/ug) and the event ledgers serve as this Inter-Process Communication (IPC) layer, where background agents write their findings, and the main thread reads them.",
+  "status": "active",
+  "tags": [
+    "concurrency",
+    "software_2_0",
+    "ipc",
+    "sidechains"
+  ],
+  "edges": [
+    {
+      "target": "evt:refinement:4557a5c7",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_stream_event_ontology",
+      "relation": "extends"
+    }
+  ]
+}

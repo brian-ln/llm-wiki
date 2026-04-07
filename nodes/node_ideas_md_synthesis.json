@@ -1,0 +1,17 @@
+{
+  "id": "node:ideas_md_synthesis",
+  "type": "concept",
+  "title": "Synthesis: ideas.md through the Epistemic Engine Lens",
+  "description": "Re-evaluating the propositions in ideas.md using the newly formalized principles (Storage != Projection, Map != Territory, Browser as VR Goggles). Proposition 1 ('Markdown is a tree... build graph databases') represents a fundamental category error if applied literally: Markdown is a declarative representation (the map), not the underlying relational truth (the territory). The graph database must be built in the underlying state ledger (the JSON events/nodes) and then projected into Markdown for human viewing. Proposition 2 regarding 'prompts', 'agents', and 'skills': A prompt is a declarative specification of intent given to an LLM rendering engine, much like HTML is to a browser. Agents and skills are the imperative execution functions (or declarative configurations) that operate on the graph. While humans may edit them via a Markdown representation (e.g., SKILL.md), they exist conceptually as capability nodes within the Engine's truth layer.",
+  "status": "active",
+  "tags": ["synthesis", "ideas.md", "markdown", "graph", "prompts", "agents"],
+  "edges": [
+    { "target": "evt:raw:q11", "relation": "answers" },
+    { "target": "evt:synthesis:1", "relation": "supported_by" },
+    { "target": "evt:raw:q12", "relation": "answers" },
+    { "target": "evt:synthesis:2", "relation": "supported_by" },
+    { "target": "evt:synthesis:3", "relation": "supported_by" },
+    { "target": "node:ontology_representation", "relation": "supports" },
+    { "target": "node:declarative_imperative", "relation": "supports" }
+  ]
+}

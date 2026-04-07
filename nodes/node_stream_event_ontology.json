@@ -1,0 +1,19 @@
+{
+  "id": "node_stream_event_ontology",
+  "type": "concept",
+  "title": "Agentic Stream Event Ontology",
+  "description": "The formal ontology for serializing Agentic Streams into an event ledger. To capture the Software 1.0/2.0 hybrid architecture, the ledger must record specific state transitions beyond just 'user message' and 'assistant message'.\n\nCore Event Types:\n1. CONTEXT_ENRICHMENT: Triggered when progressive disclosure occurs (e.g., reading a `docs/` file because SKILL.md lacked detail). Records `file_path` and `bytes_loaded`.\n2. SUBAGENT_FORK: Triggered by `context: fork`. Records the `parent_stream_id`, the new `child_stream_id`, and the `task_prompt`.\n3. EXECUTION_BYPASS: Triggered by `disable-model-invocation: true`. Records the `command_executed` directly, bypassing the LLM reasoning step.\n4. EPISTEMIC_ASSERTION: Triggered when the agent applies a rigor tag ([MEASURED], [CITED]). Records the `claim_text`, the `rigor_tag`, and the `evidence_pointer`.\n5. HYBRID_INVOCATION: Triggered when a skill is called. Records the `skill_name`, `arguments`, and whether it rendered a `no-args_card` or executed a subprocess.",
+  "status": "active",
+  "tags": [
+    "schema",
+    "event_sourcing",
+    "streams",
+    "ontology"
+  ],
+  "edges": [
+    {
+      "target": "evt:schema:fe7dfe41",
+      "relation": "defined_by"
+    }
+  ]
+}

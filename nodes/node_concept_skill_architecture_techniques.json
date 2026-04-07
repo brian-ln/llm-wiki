@@ -1,0 +1,37 @@
+{
+  "id": "node:concept_skill_architecture_techniques",
+  "type": "concept",
+  "title": "Architectural Techniques of Agent Skills",
+  "description": "[MEASURED] Structurally, skills in the ~/.claude/skills/ ecosystem employ several advanced techniques to bridge Software 1.0 and 2.0. 1. **Progressive Disclosure**: Skills act as routing tables, dynamically 'paging' files into the LLM's Context Window (RAM) only when triggered, rather than dumping everything at once. 2. **Context Isolation**: Using `context: fork`, skills spawn sub-agents (child processes) with fresh memory to prevent polluting the main thread. 3. **Execution Bypassing**: Using `disable-model-invocation: true`, a skill can force the Agent OS to execute a deterministic script directly, bypassing the probabilistic LLM entirely. 4. **Ambient Vocabulary**: Using the 'No-Args Card' pattern, a skill can inject a static definition of itself into the context window, allowing its name to act as both a runnable command and a semantic concept.",
+  "status": "active",
+  "tags": [
+    "skills",
+    "architecture",
+    "software1.0",
+    "software2.0",
+    "context_management",
+    "routing"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:59cea60f",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:bf9fea29",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:9007e00e",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:493c446c",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_hybrid_markdown_programs",
+      "relation": "implements"
+    }
+  ]
+}

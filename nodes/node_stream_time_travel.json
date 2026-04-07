@@ -1,0 +1,22 @@
+{
+  "id": "node:stream_time_travel",
+  "type": "concept",
+  "title": "Stream Time Travel",
+  "description": "Because streams are append-only event ledgers, the system can deterministically reconstruct the exact context window and state graph of any past moment, enabling true reversibility and state inspection.",
+  "status": "active",
+  "tags": [
+    "streams",
+    "event_sourcing",
+    "reversibility"
+  ],
+  "edges": [
+    {
+      "target": "evt:stream:e5f30fbb",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node:agentic_stream",
+      "relation": "capability_of"
+    }
+  ]
+}

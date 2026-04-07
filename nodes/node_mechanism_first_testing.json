@@ -1,0 +1,18 @@
+{
+  "id": "node:mechanism_first_testing",
+  "type": "protocol",
+  "title": "Mechanism-First Testing (MFT) & Scenario Design",
+  "description": "A testing philosophy demanding that fallback paths, error states, and capability assumptions be explicitly tested against non-mock backends. Requires scenario-based fixtures (tests/fixtures/) and ensures that silent failures (e.g., zero-row returns) break the build. Vital for skills dealing with measurement or benchmarks.",
+  "status": "active",
+  "tags": [
+    "testing",
+    "epistemic_rigor",
+    "mft"
+  ],
+  "edges": [
+    {
+      "target": "evt:rule:aa42fe1a",
+      "relation": "defined_by"
+    }
+  ]
+}

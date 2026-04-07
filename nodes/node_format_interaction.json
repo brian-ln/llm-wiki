@@ -1,0 +1,16 @@
+{
+  "id": "node:format_interaction_representation",
+  "type": "concept",
+  "title": "Human Interaction and Representation of HTML and Markdown",
+  "description": "HTML and Markdown are formats designed for different human interaction models and represent different stages of document projection. HTML is primarily interacted with via Web Browsers (Chrome, Safari), which parse the markup and render a Document Object Model (DOM) as a graphical user interface. Humans interact with the rendered visual elements (buttons, text, images) and rarely see the underlying HTML syntax. HTML represents a hierarchical tree of interactive visual elements designed for a screen. Markdown is interacted with through text editors. Users interact with the raw syntax directly (e.g., typing **bold** in Reddit or GitHub) or via split-pane and block editors (Obsidian, Notion). Markdown represents typographical and structural intent; it is an ascii shorthand describing how a human wants a document logically organized (headings, lists, emphasis) before it is compiled into a DOM/HTML.",
+  "status": "active",
+  "tags": ["html", "markdown", "interaction", "representation", "dom"],
+  "edges": [
+    { "target": "evt:raw:q6", "relation": "answers" },
+    { "target": "evt:raw:q7", "relation": "answers" },
+    { "target": "evt:research:7", "relation": "supported_by" },
+    { "target": "evt:research:8", "relation": "supported_by" },
+    { "target": "evt:logic:6", "relation": "supported_by" },
+    { "target": "evt:logic:7", "relation": "supported_by" }
+  ]
+}

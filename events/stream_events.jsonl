@@ -1,0 +1,4 @@
+{"id": "evt:stream:1ac2316d", "timestamp": "2026-04-07T16:16:15.081429+00:00", "type": "CONCEPT_DISCOVERY", "title": "Define Agentic Streams", "details": "Formalizing conversations as continuous event ledgers rather than static documents."}
+{"id": "evt:stream:a1949c2d", "timestamp": "2026-04-07T16:16:15.081825+00:00", "type": "CONCEPT_DISCOVERY", "title": "Define Stream Forking", "details": "The ability to branch execution traces, akin to git branches."}
+{"id": "evt:stream:e5f30fbb", "timestamp": "2026-04-07T16:16:15.081972+00:00", "type": "CONCEPT_DISCOVERY", "title": "Define Stream Time Travel", "details": "Navigating backwards in the event ledger to recover context or state."}
+{"id": "evt:stream:96577f39", "timestamp": "2026-04-07T16:16:15.082087+00:00", "type": "CONCEPT_DISCOVERY", "title": "Map AX (Agent Experience) to Streams", "details": "Interfaces must be designed for programmatic API consumption by agents, not just visual UX."}

@@ -1,0 +1,33 @@
+{
+  "id": "node:concept_polymorphic_prompt_metaphors",
+  "type": "concept",
+  "title": "Polymorphic Metaphors of the Prompt",
+  "description": "[USER-INSIGHT] [AGENT-RESEARCH] To build a robust cognitive topology, the system must support multiple co-existing metaphorical frameworks based on the user's abstraction layer. 1. **The ML Engineer Lens (Bare Metal)**: The prompt is `stdin`, the weights are the compiled program. 2. **The Compiler Lens (Virtual Machine)**: The prompt is high-level Source Code, the KV cache is the AST/IR, the LLM is the Interpreter. 3. **The Layman Lens (HCI/End-User)**: A saved prompt like `research-process.md` *is* the 'Program' or 'App'. All intermediate complexity (tokenization, attention mechanisms, embeddings) 'falls out' of view, just as assembly code falls out of view when a user launches a web browser.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "prompt",
+    "metaphor",
+    "abstraction",
+    "hci",
+    "epistemology"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:0cb25743",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:b8e69c91",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:c64440af",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_prompt_as_source",
+      "relation": "contextualizes"
+    }
+  ]
+}

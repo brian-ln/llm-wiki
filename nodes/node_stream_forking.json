@@ -1,0 +1,22 @@
+{
+  "id": "node:stream_forking",
+  "type": "concept",
+  "title": "Stream Forking",
+  "description": "Creating a divergent execution path from a specific point in an Agentic Stream. This allows exploring alternative solutions ('what if we used Rust instead of Python?') without polluting or destroying the primary context.",
+  "status": "active",
+  "tags": [
+    "streams",
+    "version_control",
+    "branching"
+  ],
+  "edges": [
+    {
+      "target": "evt:stream:a1949c2d",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node:agentic_stream",
+      "relation": "capability_of"
+    }
+  ]
+}

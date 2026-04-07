@@ -1,0 +1,14 @@
+{
+  "id": "node:declarative_imperative",
+  "type": "concept",
+  "title": "Declarative vs. Imperative Paradigms",
+  "description": "Declarative programming describes *what* the end state should be without defining the step-by-step execution. Imperative programming describes *how* to achieve a state by defining the explicit control flow and memory mutations. HTML, Markdown, and CSS are strictly declarative languages. They describe structural, semantic, and stylistic intent (e.g., 'Make this a heading', 'Paint this blue'). They do not dictate the algorithmic steps the rendering engine or parser must take to allocate memory, calculate layout geometries, or paint pixels to a screen.",
+  "status": "active",
+  "tags": ["declarative", "imperative", "html", "markdown", "css", "programming"],
+  "edges": [
+    { "target": "evt:raw:q10", "relation": "answers" },
+    { "target": "evt:logic:10", "relation": "supported_by" },
+    { "target": "evt:logic:11", "relation": "supported_by" },
+    { "target": "node:ontology_representation", "relation": "supports" }
+  ]
+}

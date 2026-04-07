@@ -1,0 +1,24 @@
+{
+  "id": "node_provisional_heuristics",
+  "type": "concept",
+  "title": "Provisional Heuristics over Absolute Goals",
+  "description": "Applying a CBT-style cognitive restructuring to systems architecture:\n\n- The Distortion (All-or-Nothing Thinking): 'GOKR defines the absolute X/Y/Z coordinates of Done.'\n- The Reality: In complex, high-dimensional spaces, 'Done' is never absolute. As an agent executes, it uncovers hidden constraints (e.g., undocumented API limits, structural tech debt). If Key Results are treated as absolute physics, the system falls victim to Goodhart's Law (optimizing the metric while destroying the actual value).\n- The Reframe: GOKR and Fitness Functions are *Provisional Heuristics* and *Directional Vectors*. They act as a compass, not a fixed GPS coordinate. They provide enough local gravity to induce convergence, but the 'destination' itself is a living hypothesis that must be constantly renegotiated by the agent and the human as reality pushes back.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "cbt",
+    "gokr",
+    "heuristics",
+    "goodharts_law"
+  ],
+  "edges": [
+    {
+      "target": "evt:cbt:1c795939",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_gokr_fitness_landscape",
+      "relation": "refines"
+    }
+  ]
+}

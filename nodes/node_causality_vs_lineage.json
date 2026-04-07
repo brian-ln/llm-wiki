@@ -1,0 +1,23 @@
+{
+  "id": "node_causality_vs_lineage",
+  "type": "concept",
+  "title": "Causality vs. Lineage (The Ledger)",
+  "description": "Describing an Event Sourcing ledger as a 'causal graph' is an epistemic overreach. \n\n1. What 'Causal' Implies: True causality implies strict determinism and a complete mapping of preconditions (Event A was the necessary and sufficient physics required to produce Event B). \n2. Why it is Inaccurate: In a Software 2.0 system, the *true* cause of an event is a 100,000-token context window interacting with billions of floating-point weights. A JSON ledger event with a `{\"parent_id\": \"123\"}` field does not capture that massive, high-dimensional causality. It only captures a thin thread of *human-readable provenance* or *correlation*.\n3. Does it have to be Causal? No. An accountant's ledger (-$50 for coffee) doesn't record the causal physics of *why* the accountant was tired. It only records the *accounting state mutation*. \n\nWe do not need a causal physics engine to build an Agent OS. We just need **Lineage** (Where did this claim originate?) and **State Resolution** (How do we project these events into a UI?). Confusing lineage for causality leads to false confidence in our ability to predict the AI's behavior.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "event_sourcing",
+    "causality",
+    "software_2_0"
+  ],
+  "edges": [
+    {
+      "target": "evt:epistemic:dcc11669",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_ledger_vs_serialization",
+      "relation": "refines"
+    }
+  ]
+}

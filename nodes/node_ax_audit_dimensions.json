@@ -1,0 +1,18 @@
+{
+  "id": "node:ax_audit_dimensions",
+  "type": "protocol",
+  "title": "Agent Experience (AX) Audit Dimensions",
+  "description": "Metrics for programmatic consumption: Vocabulary Ergonomics, State Machine Clarity, Error Signal Fidelity, Scope Transparency, Operational Guarantees (idempotency), Structured Output Formats, and Next-Action Guidance.",
+  "status": "active",
+  "tags": [
+    "ax",
+    "ux",
+    "metrics"
+  ],
+  "edges": [
+    {
+      "target": "evt:rule:aa42fe1a",
+      "relation": "defined_by"
+    }
+  ]
+}

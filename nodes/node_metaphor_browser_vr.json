@@ -1,0 +1,13 @@
+{
+  "id": "node:metaphor_browser_vr",
+  "type": "concept",
+  "title": "Metaphor: Browser as VR Goggles",
+  "description": "The web browser is essentially a pair of VR goggles for reading text files. It operates as a transient, stateless viewport that downloads structural blueprints (HTML) and style instructions (CSS) and paints an ephemeral, interactive visual projection for human consumption. It never holds the fundamental information or truth, but rather provides a localized, visual representation of it.",
+  "status": "active",
+  "tags": ["metaphor", "browser", "viewport", "html", "representation"],
+  "edges": [
+    { "target": "evt:raw:q9", "relation": "answers" },
+    { "target": "evt:metaphor:1", "relation": "supported_by" },
+    { "target": "node:ontology_representation", "relation": "supports" }
+  ]
+}

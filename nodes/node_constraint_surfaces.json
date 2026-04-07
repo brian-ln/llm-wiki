@@ -1,0 +1,20 @@
+{
+  "id": "node_constraint_surfaces",
+  "type": "concept",
+  "title": "Constraint Surfaces over Determinism",
+  "description": "The architectural principle that complex, high-entropy AI systems (Software 2.0) cannot and should not be made perfectly deterministic. \n\nInstead of fighting chaos, the system architecture provides rigid, low-dimensional boundaries (JSON schemas, append-only ledgers, IAC consensus thresholds). These are 'Constraint Surfaces'. \n\nThey do not dictate *how* the chaotic LLM engine reasons (preserving its high-dimensional creativity), but they guarantee that its outputs mechanically *converge* into a usable, predictable, and measurable state. It shifts the engineering goal from 'impossible deterministic perfection' to 'managed probability'.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "brians_ideas",
+    "software_2_0",
+    "convergence",
+    "architecture"
+  ],
+  "edges": [
+    {
+      "target": "evt:brian:269231f0",
+      "relation": "defined_by"
+    }
+  ]
+}

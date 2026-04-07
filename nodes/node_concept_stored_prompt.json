@@ -1,0 +1,19 @@
+{
+  "id": "node:concept_stored_prompt",
+  "type": "concept",
+  "title": "Stored Prompts as Behavioral Assets",
+  "description": "[AGENT-RESEARCH] 'Storing' a prompt elevates it from a transient query to a version-controlled function signature. Much like a Stored Procedure in a database, it allows engineers to build composable libraries of probabilistic behaviors, enabling modularity in Software 2.0 development.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "prompt",
+    "storage",
+    "asset"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:9de4e8a0",
+      "relation": "supported_by"
+    }
+  ]
+}

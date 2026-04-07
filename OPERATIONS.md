@@ -27,3 +27,20 @@ How the agent sequences the Layer 2 API to perform epistemic work.
 ## Layer 4: Compute Tools (Edge Execution)
 Used when Layer 2 `GET` is inappropriate due to data size or security.
 *   **`QueryNode(node_id, prompt)`**: Push compute to the data. Returns answers, not raw files.
+
+## 4. Resilient Fetching Protocol
+If the standard `webfetch` tool fails due to anti-bot protections (e.g., HTTP 403 Forbidden on Medium or other strict sites):
+*   Do not immediately give up.
+*   Fallback to using `curl` combined with reader APIs (e.g., `https://r.jina.ai/<URL>`).
+*   Alternatively, write a short Python script using `urllib` with a standard browser `User-Agent` header.
+*   If all automated methods fail, explicitly ask the human partner to provide the text.
+
+## 5. Strict Raw Immutability & Provenance
+*   **No Frontmatter:** NEVER add YAML frontmatter, headers, or metadata directly to files in the `/raw/` directory. They must remain byte-for-byte identical to the original scraped source.
+*   **Ledger-Based Provenance:** The origin of a raw file is tracked *exclusively* via an `INGEST_RAW` event in the ledger (`events/*.jsonl`). 
+*   **The Index:** The materialized view `nodes/sys_raw_index.json` serves as the dynamic catalog linking local raw files to their original URIs and ingest timestamps.
+
+## 6. Epistemic Rigor Tagging
+When making analogical leaps or mapping formal academic concepts to industry metaphors (e.g., mapping DDPM math to a "Software 2.0 ISA"), the Agent must:
+1.  Tag the claim and node descriptions with `[HYPOTHESIS]` and `[AGENT-RESEARCH]`.
+2.  Conduct an `EPISTEMIC_AUDIT` event in the ledger, explicitly stating the rationalization and defining the Null Hypothesis (the criteria that would prove the analogy false).

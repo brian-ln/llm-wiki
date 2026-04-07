@@ -1,0 +1,1 @@
+{"id": "evt:sys:fa98c503", "timestamp": "2026-04-07T16:17:12.855412+00:00", "type": "SYSTEM_DISCOVERY", "title": "Locate Opencode Logs", "details": "Found active session SQLite database and append-only JSONL logs in ~/.local/share/opencode/ and ~/.local/state/opencode/. Confirmed local execution trace is durable."}

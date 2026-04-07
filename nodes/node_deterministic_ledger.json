@@ -1,0 +1,27 @@
+{
+  "id": "node_deterministic_ledger",
+  "type": "concept",
+  "title": "Deterministic Ledger (Event Sourcing)",
+  "description": "A Deterministic Ledger is an append-only, immutable log of discrete state-mutating events (like financial transactions in an accounting ledger). \n\nIn the Software 1.0 / Software 2.0 hybrid architecture, it is the ultimate 'Source of Truth'. Because LLMs are probabilistic, their outputs are treated as volatile. Instead of allowing an LLM to destructively overwrite a file or database row (CRUD), the system forces the LLM to append a 'Mutation Event' to the ledger.\n\nIf you delete the entire materialized knowledge graph (the `nodes/` directory) and replay the ledger from the beginning, the rigid Software 1.0 materializer will deterministically reconstruct the exact same graph every single time.",
+  "status": "active",
+  "tags": [
+    "event_sourcing",
+    "software_1_0",
+    "architecture",
+    "epistemology"
+  ],
+  "edges": [
+    {
+      "target": "evt:paradigm:abaf98c5",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_pure_determinism",
+      "relation": "implements"
+    },
+    {
+      "target": "node_probabilistic_predictability",
+      "relation": "tames"
+    }
+  ]
+}

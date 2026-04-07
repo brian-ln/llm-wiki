@@ -1,0 +1,18 @@
+{
+  "id": "node:concept_prompt",
+  "type": "concept",
+  "title": "Prompts as Execution Context",
+  "description": "[AGENT-RESEARCH] [HYPOTHESIS] Are prompts programs? Strictly speaking, no. In Software 2.0, the *weights* are the compiled program (learned via gradient descent). The prompt is technically the input data (`stdin`). However, because LLMs treat their context window as a unified memory space (like a Von Neumann architecture), the prompt carries both data and 'instructions'. It acts as a virtual machine configuration, runtime environment variable, or compiler directive. It does not execute deterministic logic, but it *conditions* the probabilistic weights to temporarily behave like a specific, narrow program. Storing them is akin to saving complex configuration files or 'Stored Procedures' that reliably evoke desired behaviors from the generalized CPU.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "prompt",
+    "computing_analogy"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:3a9387e5",
+      "relation": "supported_by"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "node:concept_diffusion_model",
+  "type": "concept",
+  "title": "Diffusion Models as Continuous Neural Processors",
+  "description": "[HYPOTHESIS] [AGENT-RESEARCH] Within the Software 2.0 paradigm, Diffusion models are a class of generative processor optimized for continuous probability distributions (e.g., images, video, audio). Instead of autoregressive token prediction, their 'instruction set' involves iteratively denoising a state space. They perform a reverse random walk with drift, typically using a U-Net or Transformer backbone, to map Gaussian noise back to structured data.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "processor",
+    "diffusion",
+    "continuous",
+    "generative"
+  ],
+  "edges": [
+    {
+      "target": "evt:research:a028c040",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:research:45cdb807",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:software_2_0_architectures",
+      "relation": "instance_of"
+    }
+  ]
+}

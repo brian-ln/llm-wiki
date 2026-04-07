@@ -1,0 +1,23 @@
+{
+  "id": "node_hierarchical_agent_constraints",
+  "type": "concept",
+  "title": "Hierarchical Agent Constraints",
+  "description": "While the Agent OS allows hierarchical delegation (agents spawning sub-agents via tools like `task` or `/bg`), recursive depth is structurally constrained by several Software 2.0 realities:\n\n1. Epistemic Degradation (The Telephone Game): Unlike deterministic Software 1.0 function arguments, passing a prompt down a chain of probabilistic LLMs results in fidelity loss. The 3rd-level sub-agent often loses the original user's intent.\n2. Token Economics & Latency: LLM calls (Syscalls) are economically and temporally expensive. Deep recursion acts like a massive blocking loop or a runaway token burn.\n3. State Synchronization (Deadlocks): If Sub-Agent B spawns Sub-Agent C, coordinating shared state via the Graph (/ug) becomes complex. C might overwrite B's assumptions before B completes.\n4. Runaway Recursion (Software 2.0 Stack Overflow): Without strict depth limits or \"circuit breakers\", autonomous agents trying to fix failing sub-agents can infinitely loop, exhausting API limits.\n\nTherefore, 'Agent OS' designs usually enforce a shallow, wide hierarchy (a coordinator spawning many parallel workers) rather than a deep, recursive one.",
+  "status": "active",
+  "tags": [
+    "recursion",
+    "software_2_0",
+    "constraints",
+    "epistemology"
+  ],
+  "edges": [
+    {
+      "target": "evt:paradigm:0be8939e",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node_async_agentic_threads",
+      "relation": "constrains"
+    }
+  ]
+}

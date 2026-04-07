@@ -1,0 +1,18 @@
+{
+  "id": "node:progressive_context_enrichment",
+  "type": "protocol",
+  "title": "Progressive Context Enrichment",
+  "description": "A context RAM management protocol. The primary skill interface (SKILL.md) acts as a lean routing table (<500 lines). Heavy documentation, scenario logic, and templates are isolated in docs/ and loaded dynamically only when the agent explicitly requests them. Prevents LLM context exhaustion.",
+  "status": "active",
+  "tags": [
+    "context_management",
+    "software_2_0",
+    "optimization"
+  ],
+  "edges": [
+    {
+      "target": "evt:rule:aa42fe1a",
+      "relation": "defined_by"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "topic:ux_ax_sx_streams",
+  "type": "concept",
+  "title": "UX/AX/SX of Agentic Streams",
+  "description": "Future exploration area: If AI conversations are event logs (traces), we need new interfaces (UX/AX) to manipulate them. This includes forking a conversation, joining branches, annotating streams, 'time travel' (reverting to a past state and branching), and markup of streams. [UPDATE: Concepts materialized for Streams, Forking, Time Travel, and AX.]",
+  "status": "active",
+  "tags": [
+    "ux",
+    "ax",
+    "agent_experience",
+    "event_sourcing"
+  ],
+  "edges": [
+    {
+      "target": "evt:topic:60e7946d",
+      "relation": "defined_by"
+    },
+    {
+      "target": "node:agentic_stream",
+      "relation": "explored_in"
+    },
+    {
+      "target": "node:stream_forking",
+      "relation": "explored_in"
+    },
+    {
+      "target": "node:stream_time_travel",
+      "relation": "explored_in"
+    },
+    {
+      "target": "node:ax_agent_experience",
+      "relation": "explored_in"
+    }
+  ]
+}

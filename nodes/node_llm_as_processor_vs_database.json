@@ -1,0 +1,15 @@
+{
+  "id": "node:llm_as_processor_vs_database",
+  "type": "concept",
+  "title": "LLM: Reasoning Engine vs. Knowledge Database",
+  "description": "A prevalent anti-pattern in the public perception of AI is treating a Large Language Model (LLM) as a database of facts or a search engine. In AI engineering, this is widely considered a category error. Leading researchers (like Andrej Karpathy) characterize LLMs as 'reasoning engines' and their weights as a 'lossy compression' (like a blurry JPEG) of their training data. An LLM's weights store probabilistic patterns of language (how to process information), not relational rows of data (what the exact information is). When users ask an LLM for a fact and it hallucinates, it is because they are querying a processor as if it were a hard drive. The entire architectural pattern of Retrieval-Augmented Generation (RAG) exists explicitly because an LLM is a processor, not a database: in RAG, a system fetches actual facts from a real database, loads them into the LLM's Context Window (its RAM), and asks the LLM (its CPU) to process them.",
+  "status": "active",
+  "tags": ["llm", "processor", "database", "rag", "hallucination", "reasoning_engine", "karpathy", "software2.0"],
+  "edges": [
+    { "target": "evt:raw:q15", "relation": "answers" },
+    { "target": "evt:research:11", "relation": "supported_by" },
+    { "target": "evt:logic:15", "relation": "supported_by" },
+    { "target": "evt:logic:16", "relation": "supported_by" },
+    { "target": "node:concept_neural_net_processor", "relation": "extends" }
+  ]
+}

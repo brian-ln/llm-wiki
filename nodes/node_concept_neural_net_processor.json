@@ -1,0 +1,15 @@
+{
+  "id": "node:concept_neural_net_processor",
+  "type": "concept",
+  "title": "Neural Network as a Specialty Processor (Software 2.0)",
+  "description": "Treating a neural network as a specialty processor or a new kind of computer is not controversial; it is a well-known, widely accepted framework in modern AI engineering. Famously articulated by Andrej Karpathy as 'Software 2.0', the concept draws direct parallels between traditional hardware and AI models. In 'Software 1.0', a CPU executes explicit instructions written by a programmer. In 'Software 2.0', the Neural Network acts as the processor. The 'code' is the abstract weights compiled by an optimization algorithm against a dataset. The Prompt acts as the instruction set or input, the Context Window serves as the RAM, and the model itself is the processor executing probabilistic logic.",
+  "status": "active",
+  "tags": ["neural_network", "processor", "software2.0", "karpathy", "computing_paradigm"],
+  "edges": [
+    { "target": "evt:raw:q13", "relation": "answers" },
+    { "target": "evt:research:9", "relation": "supported_by" },
+    { "target": "evt:research:10", "relation": "supported_by" },
+    { "target": "evt:logic:12", "relation": "supported_by" },
+    { "target": "node:declarative_imperative", "relation": "relates_to" }
+  ]
+}

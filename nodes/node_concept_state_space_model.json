@@ -1,0 +1,37 @@
+{
+  "id": "node:concept_state_space_model",
+  "type": "concept",
+  "title": "State Space Models (Mamba) as Recurrent Neural Processors",
+  "description": "[HYPOTHESIS] [AGENT-RESEARCH] In the Software 2.0 paradigm, State Space Models (SSMs) like Mamba represent a different 'ISA' from Transformers. Instead of executing an O(N^2) all-to-all attention memory fetch, an SSM processor maintains a fixed-size recurrent state buffer. It executes a selective gating instruction per input token, deciding what to propagate or forget. This allows linear-time execution over massive sequences (audio, genomics, long text) at the cost of exact historical recall.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "architecture",
+    "ssm",
+    "mamba",
+    "sequence_model",
+    "recurrent"
+  ],
+  "edges": [
+    {
+      "target": "evt:research:3408a6e8",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:research:622cbb9a",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:research:54cabf70",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:research:f6405d9a",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:software_2_0_architectures",
+      "relation": "instance_of"
+    }
+  ]
+}

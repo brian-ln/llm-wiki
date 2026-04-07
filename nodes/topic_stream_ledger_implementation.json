@@ -1,0 +1,18 @@
+{
+  "id": "topic_stream_ledger_implementation",
+  "type": "concept",
+  "title": "Stream Ledger Implementation",
+  "description": "Exploration of how to implement the Agentic Stream Event Ontology into the physical local database. How do we intercept these state changes during live execution and write them to SQLite/JSONL without blocking the agent's token stream?",
+  "status": "active",
+  "tags": [
+    "implementation",
+    "database",
+    "streams"
+  ],
+  "edges": [
+    {
+      "target": "node_stream_event_ontology",
+      "relation": "implements"
+    }
+  ]
+}

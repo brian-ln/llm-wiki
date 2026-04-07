@@ -39,3 +39,9 @@ Every line in a `.jsonl` event file is a valid JSON object with the following en
 
 ## 3. Extensibility
 This schema is not frozen. As Human and Algorithmic intelligence evolve new use cases (e.g., tracking confidence intervals, deprecating claims), new `ACTION_VERB`s can be introduced. However, they must be documented here before use to ensure the `Materializer` can parse them.
+
+### Epistemic / Rigor Operations
+*   **`EPISTEMIC_AUDIT`**: Records a meta-cognitive evaluation of a previous claim, tracking assumptions, vulnerabilities, or changes in confidence (e.g., tagging a claim as a [HYPOTHESIS] because grounding material is tertiary).
+    *   *Payload:* `{"target_id": "evt:...", "audit_type": "VULNERABILITY|VALIDATION", "rationalization": "...", "null_hypothesis": "..."}`
+*   **`REVISE_CLAIM`**: Replaces a previously asserted claim with a new version, typically to inject rigor tags or correct an assumption.
+    *   *Payload:* `{"target_id": "evt:...", "new_claim": "..."}`

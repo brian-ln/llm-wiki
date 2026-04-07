@@ -1,0 +1,18 @@
+{
+  "id": "node:agentic_stream",
+  "type": "concept",
+  "title": "Agentic Stream",
+  "description": "A sequence of agent-user interactions, tool uses, and state mutations represented as a continuous, queryable event ledger (an execution trace). Unlike 'chat', a stream is a programmatic data structure.",
+  "status": "active",
+  "tags": [
+    "streams",
+    "event_sourcing",
+    "execution_trace"
+  ],
+  "edges": [
+    {
+      "target": "evt:stream:1ac2316d",
+      "relation": "defined_by"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "node:concept_pure_determinism",
+  "type": "concept",
+  "title": "Pure Determinism (Formal Systems vs Physical Reality)",
+  "description": "[AGENT-RESEARCH] Pure determinism is a property of formal, theoretical systems completely isolated from physical entropy. Examples include mathematical operations (Fibonacci), cryptographic algorithms (SHA-256), Cellular Automata (Conway's Game of Life), and rulesets of perfect-information games (Chess). In these systems, State A + Input B will yield State C with 100% mathematical certainty until the end of time. However, the moment a purely deterministic algorithm is instantiated on physical hardware, it becomes subject to thermodynamics and quantum mechanics (e.g., bit flips from cosmic rays). Software 1.0 uses heavy abstraction (logic gates, ECC memory, checksums) to force chaotic physical matter to perfectly simulate these purely deterministic theoretical constructs.",
+  "status": "active",
+  "tags": [
+    "determinism",
+    "mathematics",
+    "physics",
+    "cellular_automata",
+    "cryptography"
+  ],
+  "edges": [
+    {
+      "target": "evt:logic:bf4f3802",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:c8b556a1",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:c3af2e13",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_determinism",
+      "relation": "clarifies"
+    }
+  ]
+}

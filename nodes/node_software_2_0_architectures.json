@@ -1,0 +1,44 @@
+{
+  "id": "node:software_2_0_architectures",
+  "type": "concept",
+  "title": "Software 2.0 Architectures (ISAs of Neural Processors)",
+  "description": "While Transformers (the core of most modern LLMs) dominate text, Software 2.0 encompasses a wider array of 'Instruction Set Architectures' (ISAs) or processor types. These include Diffusion Models (Denoising U-Nets/DiTs for continuous data like images/audio), State Space Models (SSMs like Mamba, optimized for infinite context continuous processing), and Mixture of Experts (MoE, dynamic routing across sub-processors). To properly synthesize this, we expand our taxonomy from 'LLMs' to 'Foundation Models' or 'Neural Processors'. All are reasoning or generation engines that treat weights as compiled code, but their 'plus some stuff' (Tokenizers vs. VAEs, Autoregressive Samplers vs. Denoising Schedulers) and execution topologies differ based on the physics of the data they process.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "processor",
+    "transformer",
+    "diffusion",
+    "ssm",
+    "mamba",
+    "moe",
+    "architecture",
+    "foundation_models"
+  ],
+  "edges": [
+    {
+      "target": "evt:raw:q16",
+      "relation": "answers"
+    },
+    {
+      "target": "evt:logic:17",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:logic:18",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:concept_neural_net_processor",
+      "relation": "extends"
+    },
+    {
+      "target": "node:llm_architecture",
+      "relation": "supersedes"
+    },
+    {
+      "target": "node:concept_state_space_model",
+      "relation": "includes"
+    }
+  ]
+}

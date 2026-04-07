@@ -1,0 +1,18 @@
+{
+  "id": "node:adversarial_review_contract",
+  "type": "protocol",
+  "title": "Adversarial Review & Epistemic Contracts",
+  "description": "Mandates that measurement skills explicitly declare an 'epistemic-contract' in their YAML frontmatter. Claims must be tagged (MEASURED, CITED, etc.). Adversarial review enforces strict causal language discipline and tests performance against worst-case distributions to prevent LLM overclaiming.",
+  "status": "active",
+  "tags": [
+    "epistemology",
+    "rigor",
+    "governance"
+  ],
+  "edges": [
+    {
+      "target": "evt:rule:aa42fe1a",
+      "relation": "defined_by"
+    }
+  ]
+}

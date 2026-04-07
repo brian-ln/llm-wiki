@@ -1,0 +1,70 @@
+{
+  "id": "sys:raw_index",
+  "type": "protocol",
+  "title": "System Raw Materials Index",
+  "description": "A materialized view of all Layer 0 immutable raw sources ingested into the Epistemic Engine. The single source of truth for provenance is the INGEST_RAW events in the ledger. We do not use frontmatter in /raw/ to preserve the byte-for-byte integrity of external documents.",
+  "status": "active",
+  "tags": [
+    "system",
+    "provenance",
+    "index"
+  ],
+  "edges": [
+    {
+      "target": "evt:raw:bc366fe9",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://en.wikipedia.org/wiki/Diffusion_model",
+        "local_path": "raw/diffusion_model.md"
+      }
+    },
+    {
+      "target": "evt:raw:95256cbf",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://en.wikipedia.org/wiki/Mixture_of_experts",
+        "local_path": "raw/mixture_of_experts.md"
+      }
+    },
+    {
+      "target": "evt:raw:be6de4ae",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://arxiv.org/abs/2312.00752",
+        "local_path": "raw/arxiv_2312_00752_abstract.txt"
+      }
+    },
+    {
+      "target": "evt:hist:001",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+        "local_path": "llm_wiki.md"
+      }
+    },
+    {
+      "target": "evt:raw:wiki_html",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://en.wikipedia.org/wiki/HTML",
+        "local_path": "raw/html_wikipedia.md"
+      }
+    },
+    {
+      "target": "evt:raw:wiki_markdown",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://en.wikipedia.org/wiki/Markdown",
+        "local_path": "raw/markdown_wikipedia.md"
+      }
+    },
+    {
+      "target": "evt:raw:56cd61e6",
+      "relation": "tracks_provenance_of",
+      "metadata": {
+        "uri": "https://karpathy.medium.com/software-2-0-a64152b37c35",
+        "local_path": "raw/karpathy_software_2_0.md"
+      }
+    }
+  ]
+}

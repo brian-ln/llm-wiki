@@ -1,0 +1,20 @@
+{
+  "id": "node:ontology_representation",
+  "type": "concept",
+  "title": "Information vs. Representation (Ontology)",
+  "description": "Every file format (HTML, Markdown, JSON, CSV, XML, Protobuf, JPEG, GIF, PDF) is a representation (a serialization, encoding, or projection) of information. None of them are the abstract information itself. Information is the semantic meaning, intent, or state change. Formats are merely the syntax or physical constraints used to transmit or store that abstract state across space and time. This distinction is the core architectural principle of the Epistemic Engine (Storage vs. Projection): the event ledger aims to capture the information ('what happened'), while specific formats (JSON for agents, Markdown for humans) are used merely to project that information. Consequently, human-centric formats like Markdown and HTML are strictly relegated to the Input/Output boundaries (The View Layer). Even a Web Browser itself is merely a portal or viewport; it acts as a rendering engine that consumes one representation (HTML markup) and compiles it into another representation (pixels on a screen), remaining entirely separated from the underlying information.",
+  "status": "active",
+  "tags": ["ontology", "formats", "representation", "architecture", "markdown", "html", "browser", "viewport"],
+  "edges": [
+    { "target": "evt:raw:q3", "relation": "answers" },
+    { "target": "evt:logic:1", "relation": "supported_by" },
+    { "target": "evt:logic:2", "relation": "supported_by" },
+    { "target": "evt:logic:3", "relation": "supported_by" },
+    { "target": "evt:raw:q5", "relation": "answers" },
+    { "target": "evt:logic:4", "relation": "supported_by" },
+    { "target": "evt:logic:5", "relation": "supported_by" },
+    { "target": "evt:raw:q8", "relation": "answers" },
+    { "target": "evt:logic:8", "relation": "supported_by" },
+    { "target": "evt:logic:9", "relation": "supported_by" }
+  ]
+}

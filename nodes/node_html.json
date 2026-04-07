@@ -1,0 +1,14 @@
+{
+  "id": "node:html_concept",
+  "type": "concept",
+  "title": "Hypertext Markup Language (HTML)",
+  "description": "HTML is the standard markup language used to structure and display documents in a web browser. Invented by Tim Berners-Lee in late 1990 (with the first public tag description in late 1991), it uses 'tags' enclosed in angle brackets (e.g., <p>, <h1>) to denote structural semantics like paragraphs, headings, lists, and hyperlinks. HTML's design was heavily influenced by CERN SGML. It provides the foundational structure of web pages, which is often augmented by CSS (for appearance) and JavaScript (for behavior).",
+  "status": "active",
+  "tags": ["html", "markup", "web", "history"],
+  "edges": [
+    { "target": "evt:raw:q2", "relation": "answers" },
+    { "target": "evt:research:4", "relation": "supported_by" },
+    { "target": "evt:research:5", "relation": "supported_by" },
+    { "target": "evt:research:6", "relation": "supported_by" }
+  ]
+}

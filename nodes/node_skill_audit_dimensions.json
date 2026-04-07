@@ -1,0 +1,18 @@
+{
+  "id": "node:skill_audit_dimensions",
+  "type": "protocol",
+  "title": "Multi-Dimensional Skill Auditing",
+  "description": "Skills are evaluated across orthogonal axes: Implementation Match (Review), Epistemic Contract (Rigor), Path Coverage (Test-Coverage), Safety (Security), and Agent Experience (AX). Failure in one dimension (e.g., missing fallback test) does not block others, ensuring precise fault isolation.",
+  "status": "active",
+  "tags": [
+    "auditing",
+    "governance",
+    "ax"
+  ],
+  "edges": [
+    {
+      "target": "evt:rule:aa42fe1a",
+      "relation": "defined_by"
+    }
+  ]
+}

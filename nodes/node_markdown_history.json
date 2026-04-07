@@ -1,0 +1,14 @@
+{
+  "id": "node:markdown_history",
+  "type": "concept",
+  "title": "Markdown History and Lineage",
+  "description": "Markdown is a lightweight markup language created by John Gruber in 2004 (with Aaron Swartz as a sounding board) to create formatted text in plain-text editors that can optionally be converted to structurally valid HTML/XHTML. It was invented to prioritize readability over 'heavier' markup languages like RTF or HTML, allowing text to be readable as-is without looking like it has been marked up with tags. Its lineage stems from pre-existing plain text conventions in email and Usenet posts, as well as earlier lightweight languages such as setext (1992), Textile (2002), and reStructuredText (2002).",
+  "status": "active",
+  "tags": ["history", "markup", "markdown", "design"],
+  "edges": [
+    { "target": "evt:raw:q1", "relation": "answers" },
+    { "target": "evt:research:1", "relation": "supported_by" },
+    { "target": "evt:research:2", "relation": "supported_by" },
+    { "target": "evt:research:3", "relation": "supported_by" }
+  ]
+}

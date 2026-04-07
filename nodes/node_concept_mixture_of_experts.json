@@ -1,0 +1,28 @@
+{
+  "id": "node:concept_mixture_of_experts",
+  "type": "concept",
+  "title": "Mixture of Experts (MoE) Routing Architecture",
+  "description": "[HYPOTHESIS] [AGENT-RESEARCH] Mixture of Experts (MoE) is a neural architectural pattern enabling 'conditional computation'. It uses a learned gating function to dynamically route inputs to specialized sub-networks (experts). Under the Software 2.0 lens, this functions like a sparsely-activated multi-core processor or dynamic dispatch system: it scales the total parameter count (knowledge capacity) while holding active compute roughly constant.",
+  "status": "active",
+  "tags": [
+    "software2.0",
+    "architecture",
+    "moe",
+    "routing",
+    "sparse"
+  ],
+  "edges": [
+    {
+      "target": "evt:research:29305c2e",
+      "relation": "supported_by"
+    },
+    {
+      "target": "evt:research:5ee34350",
+      "relation": "supported_by"
+    },
+    {
+      "target": "node:software_2_0_architectures",
+      "relation": "instance_of"
+    }
+  ]
+}
