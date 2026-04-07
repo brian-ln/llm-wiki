@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:transient_bytecode",
+    "claim": "For transient execution within Code Mode MCP sandboxes, vanilla JavaScript is strongly preferred over TypeScript. Agent-generated scripts are Software 2.0 disposable 'bytecode'. Enforcing Software 1.0 static type-checking (TS) on single-use, ephemeral execution introduces unnecessary compilation latency, token overhead, and formatting friction. The strict schema constraints exist at the Kernel boundary (JSON Intents), not in the Sandbox scratchpad."
+  }
+}
