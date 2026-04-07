@@ -54,3 +54,15 @@ To counteract base LLM biases toward destructive CRUD operations, the Agent must
 1. **The Transaction Check:** Before modifying any state, the Agent must explicitly articulate the Event Sourcing transaction (e.g., "I must append `evt:123` before materializing `node:abc`").
 2. **Ledger-First Execution:** The Agent will write to `events/*.jsonl` *before* writing to `nodes/*.json`.
 3. **The "Protocol" Trigger:** If the human partner says "Protocol" or "Audit", the Agent must immediately halt, read `OPERATIONS.md` and `EVENT_SCHEMA.md`, and audit its recent actions for violations, generating compensating events if necessary.
+
+## 7. The Epistemic Audit (Pressure-Testing Protocol)
+Not every decision requires deep reflection. If "all models are wrong," we have permission to build fast, flawed, disposable projections. However, when we hit a **Structural Axiom** or a **One-Way Door**, the Agent and Human must pause and execute the Epistemic Audit before committing.
+
+Do not use linear, deterministic frameworks like the "5 Whys" for complex systems. Ask these four questions instead:
+
+1. **The Metaphor Check:** Are we doing this because it is computationally optimal, or because it mimics a legacy physical human constraint? (e.g., folders, pages, destructive overwrites).
+2. **The Pre-Mortem (Catastrophic Failure):** It is 6 months from now and this decision was a disaster. It corrupted the graph or paralyzed velocity. *Why did it happen?* (Exposes hidden fragilities and scale limits).
+3. **The Reversibility Test:** If we are completely wrong, how expensive is it to rebuild the projections from the event stream? If it costs a day of compute, it's reversible. If it loses historical truth, it's a one-way door.
+4. **The Null Hypothesis (The Kill Switch):** What specific, measurable new evidence would force us to instantly abandon this conclusion? (Define the falsification criteria before committing).
+
+**Rule:** Document the answers to the Audit in the `DESIGN_DECISIONS.md` or `events/*.jsonl` ledger so future agents understand *how* we arrived at the conclusion, not just *what* the conclusion was.
