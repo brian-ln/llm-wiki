@@ -4,6 +4,8 @@ If you are reading through the history or design decisions of this repository (l
 
 This document is here to translate our internal jargon. We have been building and using AI-agent tooling for years. The `llm-wiki` repository is an attempt to distill the *lessons* from those heavy, complex tools into a universal, approachable protocol. You don't need any of these tools to understand or use this repository, but this is the prior art that shaped our thinking.
 
+This entire repository is a direct riff on [Andrej Karpathy's LLM Wiki Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). Our ultimate strategy to make this easy and approachable is to build the engine here, and then regularly distill our findings and patterns *back* into a Gist (or maybe multiple Gists). You shouldn't have to navigate a complex repository just to grab the core ideas and bootstrap your own epistemic engine.
+
 ---
 
 ## 1. The `/know` CLI Skill
