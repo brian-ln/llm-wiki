@@ -2,10 +2,22 @@
   "id": "node:storage_vs_projection",
   "type": "concept",
   "title": "Storage vs. Projection (The CQRS of Thought)",
-  "description": "The storage of knowledge can and must be separate from its projection. A relational database is not the information it stores; it is merely a search index. The underlying truth (the event stream/ledger) can have infinite, simultaneous, imperfect projections. This concept bridges the gap between immutable algorithmic memory (the ledger, storing what actually happened or was stated) and fluid, reconstructive human-like recall (the materialized views, adapting information for immediate contextual use). As the adage goes: 'All models are wrong, some are useful.'",
+  "description": "The storage of knowledge can and must be separate from its projection. A relational database is not the information it stores; it is merely a search index. The underlying truth (the event stream/ledger) can have infinite, simultaneous, imperfect projections. This concept bridges the gap between immutable algorithmic memory (the ledger, storing what actually happened or was stated) and fluid, reconstructive human-like recall (the materialized views, adapting information for immediate contextual use). As the British statistician [George Box](https://en.wikipedia.org/wiki/All_models_are_wrong) famously noted: 'All models are wrong, some are useful.'",
   "status": "active",
-  "tags": ["epistemic-engine", "architecture", "deep-dive", "essay-topic"],
+  "tags": [
+    "epistemic-engine",
+    "architecture",
+    "deep-dive",
+    "essay-topic"
+  ],
   "edges": [
-    { "target": "evt:20260407112142_cqrs_thought", "relation": "supported_by" }
+    {
+      "target": "evt:20260407112142_cqrs_thought",
+      "relation": "supported_by"
+    },
+    {
+      "target": "raw:uri:https://en.wikipedia.org/wiki/All_models_are_wrong",
+      "relation": "cites"
+    }
   ]
 }
