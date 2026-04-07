@@ -36,3 +36,12 @@ This document tracks the ongoing dialogue between Human and Algorithmic intellig
     *   JSONL is perfectly suited for streaming event logs. It can be parsed line-by-line in any language (or via CLI tools like `jq`) without loading massive histories into memory.
     *   JSON strictly separates data (edges, metadata, claims) from presentation. Markdown conflates them, making programmatic mutation (`PUT` and `TRAVERSE`) fragile and regex-dependent.
 *   **The Philosophy (Evolution):** JSON is the most ubiquitous, frictionless format to bootstrap this abstract protocol. We are not prematurely optimizing for a massive graph database (like Neo4j or Dolt) right now. Because the system is Event Sourced, the materialized `nodes/` are disposable. If JSON becomes too slow for complex `TRAVERSE` operations later, we can swap the materializer to output SQLite or D1 tables instead, without losing any historical truth.
+
+## Decision 6: Meta-Evaluation (Agent Self-Regulation)
+**The Flaw/Question:** How do we force algorithmic agents to respect the Event Sourced architecture rather than falling back to their base training bias (destructive CRUD operations)?
+**The Alignment (2026-04-07):**
+*   **The Decision:** We introduced explicit "Forcing Functions" (like the "Transaction Check") into `AGENTS.md`. However, rather than demanding immediate perfection, we will treat them as an experiment. We will use our work sessions, then step back and reflect on how well they actually restrained the agent.
+*   **The Reflection Mechanism:** To make this possible, we capture three distinct layers of memory:
+    1.  **The Event Ledger (`events/*.jsonl`):** Tracks the *intended* cognitive operations.
+    2.  **The Git History:** Tracks what *actually* mutated on disk.
+    3.  **The Agent Session Logs (e.g., `~/.opencode/` or `~/.claude/sessions/`):** Tracks the raw LLM prompts, tool calls, and thought processes leading to the actions. If the agent violates the protocol, the session logs will reveal *why* the prompt engineering or forcing function failed.
