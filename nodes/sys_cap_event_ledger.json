@@ -1,0 +1,8 @@
+{
+  "id": "sys:cap:event_ledger",
+  "type": "capability",
+  "title": "The Immutable Ledger",
+  "description": "Implement the core append-only storage primitive (LOG). Must serialize events as JSONL or similar machine-readable stream.",
+  "status": "planned",
+  "edges": []
+}

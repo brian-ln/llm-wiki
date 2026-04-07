@@ -1,0 +1,10 @@
+{
+  "id": "sys:cap:materializer",
+  "type": "capability",
+  "title": "The View Materializer",
+  "description": "A background function that reads the event ledger and computes the current JSON state of a node (GET/PUT equivalent without destructive truth loss).",
+  "status": "planned",
+  "edges": [
+    { "target": "sys:cap:event_ledger", "relation": "depends_on" }
+  ]
+}
