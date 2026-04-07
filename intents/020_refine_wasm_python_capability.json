@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:sandbox_runtime",
+    "claim": "Refinement on just-bash Python support: The architectural brilliance of `just-bash` is that it provides a polyglot VIRTUAL environment. The host runtime is JS/V8, but the guest environment exposes virtual binaries like `python3` (backed by WASM) and `jq`. The agent just sees a bash terminal where it can write a `.py` file and execute it. It doesn't need to know about V8 or WASM. This allows the LLM to use its massive pre-training in Python for complex data manipulation (map-reduce over the graph), making the WASM overhead a highly worthwhile tradeoff for Agentic UX."
+  }
+}
