@@ -1,20 +1,29 @@
-# TA Memory Engine: Operations (v3 - Event Sourced)
+# TA Memory Engine: Operations Protocol Stack
 
-This engine is built on Event Sourcing. The fundamental truth of the system is the chronological log of events and claims. "Nodes" (markdown files) are merely disposable, materialized views of that log.
+This document defines the protocol and contracts for the memory engine, modeled as layers of abstraction. Agents interact with the high-level API, while the system guarantees the low-level integrity.
 
-## 1. The Primary Write Primitive
-*   **`APPEND_LOG(event_type, payload, provenance)`**: The *only* way to mutate the state of the engine. You do not overwrite facts; you append new observations, claims, or deprecations.
+## Layer 1: The Ledger / Truth Layer (Low-Level)
+This is the immutable history of the system. Agents rarely interact with this directly.
+*   **`APPEND_LOG(event)`**: The fundamental write. Records a state change, observation, or provenance.
+*   **`READ_STREAM(query)`**: The fundamental read. Replays history to understand how a belief formed.
 
-## 2. The Primary Read Primitives
-*   **`QUERY_LOG(filters)`**: Reads the stream of events. Used to understand *how* a belief evolved or to process raw buffered observations.
-*   **`GET_VIEW(node_id)`**: (Formerly `GET`). Retrieves the *current computed state* of a concept. This is a fast-path read of the materialized markdown file.
-*   **`SEARCH(query)`**: Probabilistic entry point. Finds relevant views or log entries based on semantic meaning.
-*   **`TRAVERSE(node_id, direction)`**: Deterministic entry point. Follows explicit structural edges between computed views.
+## Layer 2: The Agent API (The Interface)
+These are the ergonomic primitives the LLM uses to think and act. They abstract away the complexity of the ledger.
 
-## 3. Background System Operations (The Engine loop)
-These are not called by the reasoning agent directly; they are triggered by the system.
-*   **`MATERIALIZE_VIEW(node_id)`**: (Formerly `PUT`). When the log receives new claims about an entity, the system (or a background agent) reads the log, synthesizes the new truth, and overwrites the markdown file in `/nodes/`. It is a destructive overwrite, but it is safe because the `LOG` retains the immutable history.
+*   **`GET(node_id)`**: Fetch the *current materialized state* of a concept.
+    *   *Contract:* Returns the most recent synthesis. Fast, $O(1)$ read.
+*   **`PUT(node_id, state, edges)`**: Overwrite the current materialized state.
+    *   *Contract:* To the agent, this is a simple, destructive update to the working memory. Under the hood, the system *automatically* translates this into an `APPEND_LOG` event (recording the diff and provenance) before updating the view. The agent does not need to call `LOG` manually when using `PUT`.
+*   **`TRAVERSE(node_id, direction, edge_type)`**: Navigate explicit topological relationships.
+    *   *Contract:* Relies on the explicit `edges` defined in previous `PUT` calls.
+*   **`SEARCH(query)`**: Probabilistic entry point based on semantic/lexical similarity.
 
-## 4. Compute Tools (Edge Execution)
-*   **`QueryNode(node_id, question)`**: Push compute to large/secure materialized views.
-*   **`ExtractSchema(raw_source_id, schema)`**: Push compute to raw ingested files to extract claims for the `LOG`.
+## Layer 3: Cognitive Operations (Workflows)
+How the agent sequences the Layer 2 API to perform epistemic work.
+*   **`Assimilate`**: `SEARCH` -> `GET` -> compute delta -> `PUT`.
+*   **`Recall`**: `SEARCH` -> `GET` -> `TRAVERSE` -> assemble context.
+*   **`Resolve`**: `SEARCH` (find conflicts) -> `GET` -> compute synthesis -> `PUT`.
+
+## Layer 4: Compute Tools (Edge Execution)
+Used when Layer 2 `GET` is inappropriate due to data size or security.
+*   **`QueryNode(node_id, prompt)`**: Push compute to the data. Returns answers, not raw files.
