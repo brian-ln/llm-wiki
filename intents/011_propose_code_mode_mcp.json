@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:reusable_capabilities",
+    "claim": "The 'Code Mode MCP' pattern (exposing a sandboxed JS execution environment rather than thousands of discrete REST-like tools) is the ultimate expression of Agentic IR. Reusable processes and templates should not be exposed as rigid, pre-compiled Agent Tools that bloat the context window. Instead, they should be modeled as typed SDKs or libraries that the agent can dynamically discover via `search()` and compose on-the-fly inside an `execute()` sandbox."
+  }
+}
