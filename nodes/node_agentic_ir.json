@@ -1,0 +1,23 @@
+{
+  "id": "node:agentic_ir",
+  "type": "concept",
+  "title": "Agentic Intermediate Representation (IR)",
+  "description": "In Software 2.0 (Agent OS), imperative code (like Python scripts) used to mutate state are transient, single-use 'bytecode'. The true source code (the Intermediate Representation or IR) consists of: 1) The Intent (GOKR heuristic), 2) The Constraint Surface (Schema/Rules), and 3) The Event Ledger (Execution Trace). Storing the deterministic Python script is a Software 1.0 anti-pattern; instead, we store the IR, allowing the LLM to JIT-compile the actuator script based on the current system constraints.",
+  "status": "active",
+  "tags": [
+    "software_2_0",
+    "architecture",
+    "agentic_ir",
+    "epistemic"
+  ],
+  "edges": [
+    {
+      "target": "node:constraint_surfaces",
+      "relation": "constrained_by"
+    },
+    {
+      "target": "topic:agentic_ir_vs_transient_code",
+      "relation": "formalizes"
+    }
+  ]
+}

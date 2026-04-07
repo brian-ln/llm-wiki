@@ -1,0 +1,18 @@
+{
+  "id": "node:agentic_operations_taxonomy",
+  "type": "concept",
+  "title": "Taxonomy of Agentic Graph Operations",
+  "description": "Analysis of the transient actuation scripts revealed four distinct architectural intents: 1) ETL & Ingestion (rigid parsers, raw appended to ledger), 2) Transform & Synthesis (LLM map-reduce applying cognitive lenses), 3) Migrations (structural refactoring of schemas), 4) Actuators (single-use JSON mutators bridging high-dimensional intent to low-dimensional filesystem).",
+  "status": "active",
+  "tags": [
+    "architecture",
+    "taxonomy",
+    "operations"
+  ],
+  "edges": [
+    {
+      "target": "node:agentic_ir",
+      "relation": "implements"
+    }
+  ]
+}
