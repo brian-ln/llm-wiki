@@ -47,3 +47,14 @@ We can store data as JSON, Triples, or Event Streams if it's better for the mach
 
 > **Commit:** `920b4cd` (docs: rename open questions to DESIGN_DECISIONS and capture human/algorithmic alignment)
 > **File:** [`DESIGN_DECISIONS.md`](file:///Users/bln/play/projects/proj-20260407-092747/DESIGN_DECISIONS.md) (Replaced `OPEN_QUESTIONS.md`)
+
+### 7. Eating Our Own Dog Food: The Native Backlog
+We decided to build the list of capabilities (the backlog) we need to construct the engine. Instead of creating a simple human Markdown list, we decided to put the backlog *inside* the engine using its own format. 
+
+We created the `events/` and `nodes/` directories. The backlog was ingested as an immutable append-only JSONL event stream (`events/0001_bootstrap.jsonl`), representing claims like `ASSERT_CAPABILITY` and `ASSERT_EDGE`. 
+
+The system then "materialized" those events into discrete JSON nodes (`nodes/sys_cap_event_ledger.json`). This proves that the data layer doesn't need to be Markdown—JSON provides a much cleaner, programmatically mutable format for the machine, completely fulfilling the API contracts defined in `OPERATIONS.md`.
+
+> **Commit:** `bc09db0` (feat: bootstrap system backlog as native event log and materialized JSON nodes)
+> **Directory:** [`events/`](file:///Users/bln/play/projects/proj-20260407-092747/events/)
+> **Directory:** [`nodes/`](file:///Users/bln/play/projects/proj-20260407-092747/nodes/)
