@@ -32,6 +32,11 @@
       "target": "topic:explore_a2ui",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:agentic_ir_vs_transient_code",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }
