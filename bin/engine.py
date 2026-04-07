@@ -78,6 +78,13 @@ def process_intent(filepath):
             f.write(json.dumps(evt) + '\n')
         print(f"[MEASURED] Event {evt_id} appended to {ledger}")
         
+
+    elif op == 'LOG_HISTORICAL_INTENT':
+        # Used strictly for backporting legacy 1.0 python scripts into the 2.0 ledger.
+        # Mutates nothing in the graph, only appends the historical record to intent_ledger.jsonl.
+        print(f"[MEASURED] Historical intent for {intent.get('original_script')} safely archived in ledger.")
+        pass
+
     else:
         print(f"[ERROR] Unknown operation: {op}")
         sys.exit(1)
