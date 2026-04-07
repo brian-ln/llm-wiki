@@ -27,3 +27,12 @@ This document tracks the ongoing dialogue between Human and Algorithmic intellig
 **The Alignment (2026-04-07):**
 *   **The Decision:** TA does not have to be a singleton. Multiple agents (human and algorithmic) will operate in this graph.
 *   **The Scope:** Yes, this touches on identity, authorization, tenancy, and scope. However, we do not need to tackle the entirety of identity management right now. We will build the foundation and evolve the tenancy models as the ecosystem grows.
+
+## Decision 5: Data Serialization (JSON/JSONL vs. Markdown/Triples)
+**The Flaw/Question:** We pivoted away from Markdown to JSONL for the event ledger and JSON for materialized nodes. Why JSON specifically? Why not a Graph database, SQLite, or RDF Triples?
+**The Alignment (2026-04-07):**
+*   **The Decision:** We are using JSONL (JSON Lines) for the `events/` append-only ledger and standard JSON for the computed `nodes/`. 
+*   **The Rationale (Machine Ergonomics):** 
+    *   JSONL is perfectly suited for streaming event logs. It can be parsed line-by-line in any language (or via CLI tools like `jq`) without loading massive histories into memory.
+    *   JSON strictly separates data (edges, metadata, claims) from presentation. Markdown conflates them, making programmatic mutation (`PUT` and `TRAVERSE`) fragile and regex-dependent.
+*   **The Philosophy (Evolution):** JSON is the most ubiquitous, frictionless format to bootstrap this abstract protocol. We are not prematurely optimizing for a massive graph database (like Neo4j or Dolt) right now. Because the system is Event Sourced, the materialized `nodes/` are disposable. If JSON becomes too slow for complex `TRAVERSE` operations later, we can swap the materializer to output SQLite or D1 tables instead, without losing any historical truth.
