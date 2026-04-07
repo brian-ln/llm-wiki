@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:sandbox_runtime",
+    "claim": "Both Vercel's 'just-bash' and Cloudflare's 'Code Mode' rely entirely on JavaScript/TypeScript and V8 isolates. just-bash is written in TypeScript and runs in JS environments; Cloudflare's execute() accepts JS arrow functions to run in Dynamic Workers. Therefore, the Epistemic Engine's Userland Sandbox must be a JS/TS execution environment. While the strict Kernel (Data Plane) can remain Python, the transient 'bytecode' the agent writes to orchestrate tasks is JavaScript/TypeScript."
+  }
+}
