@@ -1,0 +1,11 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "UPDATE_NODE",
+  "payload": {
+    "target": "sys:focus_areas",
+    "changes": [
+      "added topic:auto_project_constitution to formalize generating the root .md files from the underlying JSON graph"
+    ]
+  }
+}

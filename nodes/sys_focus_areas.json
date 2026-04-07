@@ -37,6 +37,11 @@
       "target": "topic:agentic_ir_vs_transient_code",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:auto_project_constitution",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }
