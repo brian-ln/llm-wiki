@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:dual_layer_actuator",
+    "claim": "The Epistemic Engine requires a Dual-Layer Actuator Architecture (doing BOTH). \n1. The Kernel (Data Plane): A rigid, deterministic Software 1.0 actuator (like `bin/engine.py`) that ONLY accepts declarative JSON Intents to mutate the graph. This guarantees structural integrity and event sourcing.\n2. The Userland (Control Plane): A Code Mode MCP / `just-bash` sandbox. The agent writes transient, dynamic scripts here to perform complex traversals or map-reduce logic. \nThe critical constraint: Userland scripts cannot bypass the Kernel. The sandbox's ultimate output must be a declarative JSON Intent submitted to the Kernel."
+  }
+}
