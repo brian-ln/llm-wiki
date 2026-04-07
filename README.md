@@ -4,11 +4,11 @@ A conceptual evolution and riff on [Andrej Karpathy's LLM Wiki pattern](https://
 
 Karpathy's brilliant insight was that **traditional RAG is ephemeral**—an LLM rediscovers knowledge from scratch on every query. Instead, we should use an LLM to actively maintain a compounding, interconnected knowledge graph. 
 
-While his pattern used Markdown files and Obsidian to make it human-readable, we realized that **optimizing a database for human readability introduces massive taxonomy debt and programmatic friction for the algorithmic partner.** Asking an LLM to reliably mutate a 2,000-word Markdown string via destructive `PUT` operations leads to hallucinated deletions, formatting breaks, and the loss of historical truth.
+While his pattern used Markdown files and Obsidian to make it human-readable, we realized that **optimizing a database for human readability introduces massive taxonomy debt and programmatic friction for an algorithmic partner.** Asking an LLM to reliably mutate a 2,000-word Markdown string via destructive `PUT` operations leads to hallucinated deletions, formatting breaks, and the loss of historical truth.
 
 ### The Pivot: An Epistemic Engine for Human & Algorithmic Partners
 
-This repository distills years of exploration (our `/know` CLI, Dolt graphs, and multi-agent coordination) into an approachable starting point. 
+This repository distills years of our exploration into AI memory systems into an approachable, universal starting point. *(If you are curious about the specific internal tools and patterns that led us here—like the `/know` CLI, Dolt databases, and our `/council` multi-agent workflows—read [Our Toolchain & Learnings](./TOOLCHAIN_AND_LEARNINGS.md)).*
 
 We stripped away the human-centric constraints of the filesystem and pivoted to a **pure Event Sourced architecture**. The LLM does not act as a naive file clerk overwriting Markdown pages; it acts as a reasoning engine appending factual claims to an immutable ledger.
 
