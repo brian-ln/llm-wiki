@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "ASSERT_CLAIM",
+  "payload": {
+    "target": "sys:protocol:virtual_systems",
+    "claim": "The true power of 'just-bash' and 'Code Mode' is that they are VIRTUAL systems. There is no real filesystem or real CLI binaries. They project an illusion of a POSIX environment or filesystem to the agent. Because LLMs are heavily pre-trained on bash, grep, jq, and file I/O, providing a virtual filesystem allows the agent to use its deepest training weights. Underneath, the virtual system intercepts these standard operations and maps them directly to the Graph and Event Ledger. The Filesystem itself is just another Projection."
+  }
+}
