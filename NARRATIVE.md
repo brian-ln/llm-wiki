@@ -6,7 +6,7 @@
 ### 1. The Spark: Karpathy's LLM Wiki
 We began by analyzing Andrej Karpathy's "LLM Wiki" gist. The core thesis was compelling: traditional RAG is ephemeral and rediscovers knowledge from scratch every time. A better pattern is a **compounding, LLM-maintained markdown graph** where an LLM acts as the programmer/maintainer of a Wiki (using Obsidian as the IDE).
 > **Commit:** `a870f33` (docs: add LLM Wiki gist by Karpathy)
-> **File:** [`llm_wiki.md`](file:///Users/bln/play/projects/proj-20260407-092747/llm_wiki.md) (Blob: `f367a72`)
+> **File:** [`raw/karpathy_llm_wiki.md`](file:///Users/bln/play/projects/proj-20260407-092747/raw/karpathy_llm_wiki.md) (Blob: `f367a72`)
 
 ### 2. The Pivot: Erasing the Filesystem
 While the markdown/Obsidian pattern is great for a local desktop, we realized it is too coupled to a traditional filesystem. We want this engine to run anywhere:

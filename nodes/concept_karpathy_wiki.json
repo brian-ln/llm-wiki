@@ -1,0 +1,12 @@
+{
+  "id": "node:concept_karpathy_wiki",
+  "type": "concept",
+  "title": "Karpathy's LLM Wiki Pattern (Inspiration)",
+  "description": "The original concept by Andrej Karpathy that sparked this repository. It advocates for using LLMs to actively maintain a compounding, interconnected knowledge graph rather than relying on ephemeral RAG where knowledge is rediscovered from scratch. **Critical Context for Agents:** While the core thesis (a compounding graph maintained by an LLM) is foundational to our Epistemic Engine, we explicitly REJECT its implementation details (Markdown files, Obsidian UI, destructive PUTs). We replaced those with an Event Sourced JSON architecture (see Decision 5). Do not adopt the specific Markdown formatting or folder structures suggested in the source text.",
+  "status": "active",
+  "tags": ["prior-art", "inspiration", "rag", "knowledge-graph"],
+  "edges": [
+    { "target": "raw:karpathy_llm_wiki.md", "relation": "derived_from" },
+    { "target": "raw:uri:https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f", "relation": "cites" }
+  ]
+}
