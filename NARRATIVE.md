@@ -38,3 +38,12 @@ We redesigned `OPERATIONS.md` to reflect an engine that separates the dumb stora
 > **Commit:** `80b4954` (docs: capture narrative, assumptions, and refine operations based on epistemic engine pivot)
 > **File:** [`OPERATIONS.md`](file:///Users/bln/play/projects/proj-20260407-092747/OPERATIONS.md) (Blob: `e888e1a`)
 > **File:** [`NARRATIVE.md`](file:///Users/bln/play/projects/proj-20260407-092747/NARRATIVE.md) (this file)
+
+### 6. Removing Human Constraints & Embracing the Algorithmic Partnership
+After formalizing the `OPERATIONS.md` protocol, we explicitly called out several unexamined assumptions we were holding—specifically around using Markdown (a human document format) for machine mutation (`PUT`), and how to handle concurrency in a multi-agent system.
+
+**The breakthrough:** We realized we were over-indexing on making the system "readable" for humans, forcing legacy human-centric workflows onto an algorithmic partner. The system is for "us"—Human and Algorithmic intelligence working together. By removing the ego and the need to prematurely optimize for human understanding, the number of "one-way doors" collapses. 
+We can store data as JSON, Triples, or Event Streams if it's better for the machine. We can defer complex concurrency, identity, and tenancy (auth/scope) problems to later iterations, leaning on our prior art (e.g., `know`, Dolt).
+
+> **Commit:** `920b4cd` (docs: rename open questions to DESIGN_DECISIONS and capture human/algorithmic alignment)
+> **File:** [`DESIGN_DECISIONS.md`](file:///Users/bln/play/projects/proj-20260407-092747/DESIGN_DECISIONS.md) (Replaced `OPEN_QUESTIONS.md`)
