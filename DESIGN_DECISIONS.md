@@ -45,3 +45,11 @@ This document tracks the ongoing dialogue between Human and Algorithmic intellig
     1.  **The Event Ledger (`events/*.jsonl`):** Tracks the *intended* cognitive operations.
     2.  **The Git History:** Tracks what *actually* mutated on disk.
     3.  **The Agent Session Logs (e.g., `~/.opencode/` or `~/.claude/sessions/`):** Tracks the raw LLM prompts, tool calls, and thought processes leading to the actions. If the agent violates the protocol, the session logs will reveal *why* the prompt engineering or forcing function failed.
+
+## Decision 7: The Myth of Absolute Immutability and the Necessity of Forgetting
+**The Flaw/Question:** Is the Event Ledger capturing memory exactly and precisely? Is it truly immutable? When do we adapt, forget, edit, or censor? Why?
+**The Alignment (2026-04-07):**
+*   **The Lossy Capture:** We are *not* capturing reality precisely. An agent extracting claims from a PDF into an `ASSERT_CLAIM` event is a highly lossy, biased compression (filtered through the prompt, context window, and model weights). Only the `/raw/` file (the sensory input) is exact. The Ledger is merely a record of the agent's *subjective interpretation* at that moment in time.
+*   **The Myth of Immutability:** Absolute immutability is a technical ideal (Event Sourcing), but a biological liability. An infinite memory log eventually becomes pure noise, bloating context windows and compute costs.
+*   **When to Forget (Compaction):** We must build "forgetting" into the engine. In Event Sourcing, this is called *Compaction* or *Snapshotting*. Periodically, the system will read 10,000 messy, contradictory events, synthesize them into a clean baseline state (a Snapshot), and discard the raw history to improve the signal-to-noise ratio.
+*   **When to Edit/Censor (Hard Deletes):** Epistemic purity must yield to operational reality. If a secret (API key) or sensitive PII is hallucinated into the `events/*.jsonl` log, appending a "Correction" event is insufficient. The secret remains in plain text history. We must allow "hard edits" to physically scrub the log for security, privacy, or legal compliance.
