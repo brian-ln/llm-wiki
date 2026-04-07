@@ -19,6 +19,10 @@ Do not invent new folders. The storage layer is strictly divided:
 *   **Never Destructively PUT Without Logging:** Before you overwrite a materialized view in `/nodes/`, you must write an immutable record to the ledger explaining *why* the belief changed and citing the source.
 *   **Do Not Pull Massive Raw Files:** If a file in `/raw/` is large or complex, do not `GET` the entire file into your context window. Use Compute Tools (`QueryNode`, `ExtractSchema`) to push your questions down to the file and retrieve only the answers.
 *   **Embrace Taxonomy Fluidity:** Do not force information into a node if it doesn't fit perfectly. It is better to create a new, fragmented node and rely on `SEARCH` to cluster them later than to create a brittle taxonomy tree today.
+*   **The Master Backlog (`sys:focus_areas`):** Tasks, topics, and active workstreams are not tracked in a standard `TODO.md` file. They are tracked as structural edges out of the `nodes/sys_focus_areas.json` materialized view.
+    *   Workstreams are prefixed with `topic:` (e.g., `topic:markdown_as_dag`).
+    *   State tracking operates via edge properties (e.g., `{"target": "topic:markdown_as_dag", "relation": "tracks", "status": "planned|active|materialized"}`).
+    *   If a topic requires substantial exploration, materialize a full `concept` node for it (e.g., `nodes/topic_markdown_as_dag.json`).
 
 ## 3. JSON Formatting Standards (Materialized Views)
 **CRITICAL:** Do NOT write Markdown files to the `/nodes/` directory. Per Decision 5 (Storage vs. Projection), Markdown is a terrible format for programmatic mutation. All materialized views must be strict `.json` files.

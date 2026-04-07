@@ -1,0 +1,14 @@
+{
+  "operation": "APPEND_EVENT",
+  "ledger": "system_events.jsonl",
+  "event_type": "PROTOCOL_UPDATE",
+  "payload": {
+    "target": "sys:protocol:focus_areas",
+    "changes": [
+      "Formalized sys:focus_areas as the canonical backlog tracker",
+      "Documented topic:* naming convention for focus areas",
+      "Documented status: planned|active|materialized tracking on edges",
+      "Added APPEND_EDGE actuator support to bin/engine.py"
+    ]
+  }
+}

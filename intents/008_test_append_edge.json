@@ -1,0 +1,9 @@
+{
+  "operation": "APPEND_EDGE",
+  "target": "sys:focus_areas",
+  "edge": {
+    "target": "topic:test_backlog_append_edge",
+    "relation": "tracks",
+    "status": "planned"
+  }
+}

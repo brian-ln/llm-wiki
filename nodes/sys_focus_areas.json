@@ -47,6 +47,11 @@
       "target": "topic:reconcile_legacy_markdown",
       "relation": "tracks",
       "status": "planned"
+    },
+    {
+      "target": "topic:test_backlog_append_edge",
+      "relation": "tracks",
+      "status": "planned"
     }
   ]
 }

@@ -79,6 +79,40 @@ def process_intent(filepath):
         print(f"[MEASURED] Event {evt_id} appended to {ledger}")
         
 
+
+    elif op == 'APPEND_EDGE':
+        target = intent.get('target')
+        edge = intent.get('edge')
+        
+        if not target or not edge:
+            print("[ERROR] APPEND_EDGE requires 'target' and 'edge'")
+            sys.exit(1)
+            
+        filename = target.replace(':', '_') + '.json'
+        out_path = os.path.join('nodes', filename)
+        
+        if not os.path.exists(out_path):
+            print(f"[ERROR] Node {target} does not exist. Cannot APPEND_EDGE.")
+            sys.exit(1)
+            
+        with open(out_path, 'r') as f:
+            node_data = json.load(f)
+            
+        if 'edges' not in node_data:
+            node_data['edges'] = []
+            
+        # Update if exists, otherwise append
+        existing = next((e for e in node_data['edges'] if e.get('target') == edge.get('target')), None)
+        if existing:
+            existing.update(edge)
+            print(f"[MEASURED] Edge to {edge.get('target')} updated in {target}")
+        else:
+            node_data['edges'].append(edge)
+            print(f"[MEASURED] Edge to {edge.get('target')} appended to {target}")
+            
+        with open(out_path, 'w') as f:
+            json.dump(node_data, f, indent=2)
+
     elif op == 'LOG_HISTORICAL_INTENT':
         # Used strictly for backporting legacy 1.0 python scripts into the 2.0 ledger.
         # Mutates nothing in the graph, only appends the historical record to intent_ledger.jsonl.
